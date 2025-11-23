@@ -12,6 +12,7 @@ namespace BYTEAZULPROFESIONAL
 {
     public partial class FmMenu : Form
     {
+        public string IdUsuario = "1";
         public FmMenu()
         {
             InitializeComponent();

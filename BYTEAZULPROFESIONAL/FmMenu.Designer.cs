@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmMenu));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panelsubSuscripciones = new System.Windows.Forms.Panel();
+            this.btnAgregarSus = new System.Windows.Forms.Button();
+            this.btnGestionarSus = new System.Windows.Forms.Button();
             this.btnSuscripciones = new System.Windows.Forms.Button();
             this.panelSubAdministracion = new System.Windows.Forms.Panel();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
@@ -72,10 +75,8 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.Pic_FondoMenu = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.panelsubSuscripciones = new System.Windows.Forms.Panel();
-            this.btnGestionarSus = new System.Windows.Forms.Button();
-            this.btnAgregarSus = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
+            this.panelsubSuscripciones.SuspendLayout();
             this.panelSubAdministracion.SuspendLayout();
             this.panelSubLotes.SuspendLayout();
             this.panelSubMedicina.SuspendLayout();
@@ -88,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Logo)).BeginInit();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_FondoMenu)).BeginInit();
-            this.panelsubSuscripciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -119,6 +119,48 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 618);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // panelsubSuscripciones
+            // 
+            this.panelsubSuscripciones.Controls.Add(this.btnAgregarSus);
+            this.panelsubSuscripciones.Controls.Add(this.btnGestionarSus);
+            this.panelsubSuscripciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelsubSuscripciones.Location = new System.Drawing.Point(0, 1343);
+            this.panelsubSuscripciones.Name = "panelsubSuscripciones";
+            this.panelsubSuscripciones.Size = new System.Drawing.Size(233, 76);
+            this.panelsubSuscripciones.TabIndex = 19;
+            // 
+            // btnAgregarSus
+            // 
+            this.btnAgregarSus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarSus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarSus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarSus.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarSus.Location = new System.Drawing.Point(0, 38);
+            this.btnAgregarSus.Name = "btnAgregarSus";
+            this.btnAgregarSus.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAgregarSus.Size = new System.Drawing.Size(233, 38);
+            this.btnAgregarSus.TabIndex = 5;
+            this.btnAgregarSus.Text = "Agregar Suscripción";
+            this.btnAgregarSus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarSus.UseVisualStyleBackColor = true;
+            this.btnAgregarSus.Click += new System.EventHandler(this.btnAgregarSus_Click);
+            // 
+            // btnGestionarSus
+            // 
+            this.btnGestionarSus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarSus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarSus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarSus.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarSus.Location = new System.Drawing.Point(0, 0);
+            this.btnGestionarSus.Name = "btnGestionarSus";
+            this.btnGestionarSus.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnGestionarSus.Size = new System.Drawing.Size(233, 38);
+            this.btnGestionarSus.TabIndex = 4;
+            this.btnGestionarSus.Text = "Gestionar Suscriptors";
+            this.btnGestionarSus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarSus.UseVisualStyleBackColor = true;
+            this.btnGestionarSus.Click += new System.EventHandler(this.btnGestionarSus_Click);
             // 
             // btnSuscripciones
             // 
@@ -730,48 +772,6 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // panelsubSuscripciones
-            // 
-            this.panelsubSuscripciones.Controls.Add(this.btnAgregarSus);
-            this.panelsubSuscripciones.Controls.Add(this.btnGestionarSus);
-            this.panelsubSuscripciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelsubSuscripciones.Location = new System.Drawing.Point(0, 1343);
-            this.panelsubSuscripciones.Name = "panelsubSuscripciones";
-            this.panelsubSuscripciones.Size = new System.Drawing.Size(233, 76);
-            this.panelsubSuscripciones.TabIndex = 19;
-            // 
-            // btnGestionarSus
-            // 
-            this.btnGestionarSus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestionarSus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionarSus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarSus.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarSus.Location = new System.Drawing.Point(0, 0);
-            this.btnGestionarSus.Name = "btnGestionarSus";
-            this.btnGestionarSus.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnGestionarSus.Size = new System.Drawing.Size(233, 38);
-            this.btnGestionarSus.TabIndex = 4;
-            this.btnGestionarSus.Text = "Gestionar Suscriptors";
-            this.btnGestionarSus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarSus.UseVisualStyleBackColor = true;
-            this.btnGestionarSus.Click += new System.EventHandler(this.btnGestionarSus_Click);
-            // 
-            // btnAgregarSus
-            // 
-            this.btnAgregarSus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarSus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarSus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarSus.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarSus.Location = new System.Drawing.Point(0, 38);
-            this.btnAgregarSus.Name = "btnAgregarSus";
-            this.btnAgregarSus.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregarSus.Size = new System.Drawing.Size(233, 38);
-            this.btnAgregarSus.TabIndex = 5;
-            this.btnAgregarSus.Text = "Agregar Suscripción";
-            this.btnAgregarSus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarSus.UseVisualStyleBackColor = true;
-            this.btnAgregarSus.Click += new System.EventHandler(this.btnAgregarSus_Click);
-            // 
             // FmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -787,6 +787,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FmMenu";
             this.panelSideMenu.ResumeLayout(false);
+            this.panelsubSuscripciones.ResumeLayout(false);
             this.panelSubAdministracion.ResumeLayout(false);
             this.panelSubLotes.ResumeLayout(false);
             this.panelSubMedicina.ResumeLayout(false);
@@ -799,7 +800,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Logo)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_FondoMenu)).EndInit();
-            this.panelsubSuscripciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

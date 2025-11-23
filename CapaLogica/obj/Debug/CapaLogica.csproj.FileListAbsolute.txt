@@ -1,0 +1,9 @@
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\bin\Debug\CapaLogica.dll
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\bin\Debug\CapaLogica.pdb
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\bin\Debug\CapaDatos.dll
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\bin\Debug\CapaDatos.pdb
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\obj\Debug\CapaLogica.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\obj\Debug\CapaLogica.csproj.Up2Date
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\ASUS\Desktop\BYTEAZULOTE\CapaLogica\obj\Debug\CapaLogica.pdb
