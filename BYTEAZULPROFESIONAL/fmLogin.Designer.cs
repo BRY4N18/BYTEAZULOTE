@@ -54,6 +54,7 @@
             this.btnIngresar.Size = new System.Drawing.Size(282, 58);
             this.btnIngresar.TabIndex = 74;
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtUsuario
             // 
@@ -76,6 +77,7 @@
             this.txtPassword.Size = new System.Drawing.Size(236, 21);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // btnMinimizar
             // 
@@ -93,6 +95,7 @@
             this.btnMinimizar.Size = new System.Drawing.Size(23, 19);
             this.btnMinimizar.TabIndex = 77;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrar
             // 
@@ -110,6 +113,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(23, 19);
             this.btnCerrar.TabIndex = 78;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnVer
             // 
@@ -128,6 +132,7 @@
             this.btnVer.Size = new System.Drawing.Size(32, 30);
             this.btnVer.TabIndex = 79;
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnOcultar
             // 
@@ -147,6 +152,7 @@
             this.btnOcultar.TabIndex = 80;
             this.btnOcultar.UseVisualStyleBackColor = false;
             this.btnOcultar.Visible = false;
+            this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // 
             // fmLogin
             // 
