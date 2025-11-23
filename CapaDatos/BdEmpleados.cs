@@ -43,5 +43,36 @@ namespace CapaDatos
                 return (false, 0);
             }
         }
+
+        public string ApellidoEmpleado (int idusuario)
+        {
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_ApellidoUsuarios", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@IdUsuario", idusuario);
+                        cmd.Parameters.AddWithValue("@TipoUsuario", 'E');
+
+                        SqlParameter resultadoParam = new SqlParameter("@Apellido", SqlDbType.VarChar) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(resultadoParam);
+
+                        cmd.ExecuteNonQuery();
+
+                        return resultadoParam.Value.ToString();
+                    }
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 }
