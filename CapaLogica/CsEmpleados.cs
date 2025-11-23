@@ -17,5 +17,13 @@ namespace CapaLogica
             if (idusuario == 0) return (false, "Credenciales incorrectas");
             return (resultado, idusuario.ToString());
         }
+
+        public (bool, string) ApellidoEmpleado (int idusuario)
+        {
+            bdempleados = new BdEmpleados();
+            string apellido = bdempleados.ApellidoEmpleado(idusuario);
+            if (apellido == string.Empty) return (false, "Empleado no encontrado");
+            return (true,  apellido);
+        }
     }
 }

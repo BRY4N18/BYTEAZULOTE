@@ -55,8 +55,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtNombreEmpleado = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -382,17 +382,6 @@
             this.Eliminar.ToolTipText = "Eliminar";
             this.Eliminar.Width = 49;
             // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCliente.Location = new System.Drawing.Point(467, 146);
-            this.txtNombreCliente.MaxLength = 10;
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(81, 21);
-            this.txtNombreCliente.TabIndex = 148;
-            // 
             // txtNombreEmpleado
             // 
             this.txtNombreEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
@@ -403,6 +392,17 @@
             this.txtNombreEmpleado.Name = "txtNombreEmpleado";
             this.txtNombreEmpleado.Size = new System.Drawing.Size(102, 21);
             this.txtNombreEmpleado.TabIndex = 149;
+            // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Location = new System.Drawing.Point(467, 146);
+            this.txtNombreCliente.MaxLength = 10;
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(81, 21);
+            this.txtNombreCliente.TabIndex = 148;
             // 
             // fmCaja
             // 
@@ -435,6 +435,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmCaja";
             this.Text = "fmCaja";
+            this.Load += new System.EventHandler(this.fmCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -469,7 +470,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        public System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.TextBox txtNombreEmpleado;
+        public System.Windows.Forms.TextBox txtNombreCliente;
     }
 }
