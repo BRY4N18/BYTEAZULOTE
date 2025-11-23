@@ -46,6 +46,7 @@ namespace BYTEAZULPROFESIONAL
         private void fmCaja_Load(object sender, EventArgs e)
         {
             menu = new FmMenu();
+            txtFecha.Text = DateTime.Now.ToString().Split(' ')[0];
             txtidEmpleado.Text = menu.IdUsuario.ToString();
             ApellidoEmpleado();
         }      
