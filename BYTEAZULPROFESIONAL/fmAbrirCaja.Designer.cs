@@ -40,11 +40,12 @@
             this.txtSueldoInicial.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSueldoInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSueldoInicial.Location = new System.Drawing.Point(262, 180);
-            this.txtSueldoInicial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSueldoInicial.Margin = new System.Windows.Forms.Padding(2);
             this.txtSueldoInicial.MaxLength = 30;
             this.txtSueldoInicial.Name = "txtSueldoInicial";
             this.txtSueldoInicial.Size = new System.Drawing.Size(160, 16);
             this.txtSueldoInicial.TabIndex = 11;
+            this.txtSueldoInicial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldoInicial_KeyPress);
             // 
             // btnCancelar
             // 
@@ -80,6 +81,7 @@
             this.btnConfirmar.Size = new System.Drawing.Size(107, 20);
             this.btnConfirmar.TabIndex = 94;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // fmAbrirCaja
             // 
@@ -93,10 +95,11 @@
             this.Controls.Add(this.btnConfirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fmAbrirCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abrir Caja";
+            this.Load += new System.EventHandler(this.fmAbrirCaja_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
