@@ -54,6 +54,7 @@
             // 
             // dgvVerClientes
             // 
+            this.dgvVerClientes.AllowUserToAddRows = false;
             this.dgvVerClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvVerClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVerClientes.Location = new System.Drawing.Point(74, 138);
@@ -67,6 +68,7 @@
             this.dgvVerClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVerClientes.Size = new System.Drawing.Size(697, 321);
             this.dgvVerClientes.TabIndex = 14;
+            this.dgvVerClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerClientes_CellContentClick);
             this.dgvVerClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerClientes_CellContentDoubleClick);
             // 
             // txtBuscar
@@ -80,6 +82,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(386, 16);
             this.txtBuscar.TabIndex = 15;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // fmGestionarClientes
             // 
@@ -96,6 +99,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmGestionarClientes";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.fmGestionarClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
