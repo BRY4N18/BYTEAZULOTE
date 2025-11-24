@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -86,13 +87,80 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnAbrirCaja_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int idEmpleadoInt = 0;
+
+                // Si IdUsuario es nulo o vacío, usaremos 1 por defecto para que no falle
+                if (string.IsNullOrEmpty(this.IdUsuario) || !int.TryParse(this.IdUsuario, out idEmpleadoInt))
+                {
+                    idEmpleadoInt = 1;
+                }
+
+                CsCaja logica = new CsCaja();
+
+                // 2. VERIFICAR
+                if (logica.EstaCajaAbierta(idEmpleadoInt))
+                {
+                    MessageBox.Show("La caja YA está abierta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // 3. ABRIR EL FORMULARIO PEQUEÑO
+                    fmAbrirCaja frmPequeño = new fmAbrirCaja();
+
+                    frmPequeño.IdEmpleadoRecibido = idEmpleadoInt;
+
+                    // Mostramos el hijo y esperamos
+                    if (frmPequeño.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("Sesión iniciada. Ahora puedes ir a Ventas u compras.", "Sistema");
+               
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en menú: " + ex.Message);
+            }
         }
 
         private void btnVerVentas_Click(object sender, EventArgs e)
         {
-            PanelContenedorForm(new fmVentas());
-            ocultarMenu();
+            try
+            {
+                int idEmpleadoInt = 0;
+
+                // Si IdUsuario es nulo, vacío o no es número, usamos 1 por defecto para que no se rompa
+                if (string.IsNullOrEmpty(this.IdUsuario) || !int.TryParse(this.IdUsuario, out idEmpleadoInt))
+                {
+                    idEmpleadoInt = 1;
+                }
+
+                // 2. LÓGICA DE CAJA
+                CsCaja logica = new CsCaja();
+
+                if (logica.EstaCajaAbierta(idEmpleadoInt))
+                {
+                    // === CAJA ABIERTA: ENTRAMOS A VENTAS ===
+
+                    // Instanciamos el formulario de ventas
+                    fmVentas formVentas = new fmVentas();
+                    PanelContenedorForm(formVentas);
+                    ocultarMenu();
+                }
+                else
+                {
+                    // === CAJA CERRADA: ALERTA ===
+                    MessageBox.Show("ACCESO DENEGADO.\n\nLa caja está cerrada. " +
+                                    "Por favor, ve al botón 'Abrir Caja' e inicia sesión primero.",
+                                    "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir ventas: " + ex.Message);
+            }
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace CapaDatos
         private string server, database, usuario, password, connectionString;
         public BdConexionSQL()
         {
-            server = ".";
+            server = "(localdb)\\.";
             database = "BYTEAZUL_REM";
             usuario = "sa";
             password = "12345";

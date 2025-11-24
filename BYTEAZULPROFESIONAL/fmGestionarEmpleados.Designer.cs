@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmGestionarEmpleados));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvVerEmpleados = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.imlImagenes = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +56,11 @@
             // 
             // dgvVerEmpleados
             // 
+            this.dgvVerEmpleados.AllowUserToAddRows = false;
             this.dgvVerEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvVerEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVerEmpleados.Location = new System.Drawing.Point(37, 148);
-            this.dgvVerEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVerEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVerEmpleados.MultiSelect = false;
             this.dgvVerEmpleados.Name = "dgvVerEmpleados";
             this.dgvVerEmpleados.ReadOnly = true;
@@ -67,6 +70,7 @@
             this.dgvVerEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVerEmpleados.Size = new System.Drawing.Size(770, 346);
             this.dgvVerEmpleados.TabIndex = 87;
+            this.dgvVerEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerEmpleados_CellContentClick);
             // 
             // txtBuscar
             // 
@@ -74,11 +78,18 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(212, 76);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(386, 16);
             this.txtBuscar.TabIndex = 88;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // imlImagenes
+            // 
+            this.imlImagenes.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imlImagenes.ImageSize = new System.Drawing.Size(16, 16);
+            this.imlImagenes.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // fmGestionarEmpleados
             // 
@@ -105,5 +116,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvVerEmpleados;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ImageList imlImagenes;
     }
 }
