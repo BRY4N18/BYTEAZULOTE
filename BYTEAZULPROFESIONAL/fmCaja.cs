@@ -17,7 +17,10 @@ namespace BYTEAZULPROFESIONAL
     {
         FmMenu menu;
         CsEmpleados csempleados;
+        CsCaja cscaja;
         CsClientes csclientes;
+
+        public int stock = 0;
         public fmCaja()
         {
             InitializeComponent();
@@ -43,12 +46,169 @@ namespace BYTEAZULPROFESIONAL
             }
         }
 
+        private void ApellidoCliente()
+        {
+            try
+            {
+                int idcliente = int.Parse(txtIdCliente.Text.ToString().Trim());
+                bool resultado;
+                string apellidocliente = "";
+                csclientes = new CsClientes();
+                (resultado, apellidocliente) = csclientes.ApellidoCliente(idcliente);
+                if (!resultado)
+                    MessageBox.Show(apellidocliente, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                else
+                    txtNombreCliente.Text = apellidocliente.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private DataTable ConvertirDgvADataTable()
+        {
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn columna in dgvDetallesVentas.Columns)
+            {
+                dt.Columns.Add(columna.HeaderText);
+            }
+            foreach (DataGridViewRow fila in dgvDetallesVentas.Rows)
+            {
+                if (!fila.IsNewRow)
+                {
+                    DataRow dr = dt.NewRow();
+                    for (int i = 0; i < fila.Cells.Count; i++)
+                    {
+                        dr[i] = fila.Cells[i].Value ?? DBNull.Value;
+                    }
+                    dt.Rows.Add(dr);
+                }
+            }
+            return dt;
+        }   
+
+        private void GenerarVenta()
+        {
+            try
+            {
+                cscaja = new CsCaja();
+                int idempleado = int.Parse(txtidEmpleado.Text.ToString().Trim());
+                int idcliente = int.Parse(txtIdCliente.Text.ToString().Trim());
+                decimal totalventa = decimal.Parse(txtTotal.Text.ToString().Replace(',', '.').Trim());
+                (bool resultado, string mensaje) = cscaja.GenerarVenta(idempleado, idcliente, totalventa, ConvertirDgvADataTable());
+
+                if (!resultado) MessageBox.Show(mensaje, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("La venta se realizó con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIdProducto.Clear();
+                    txtNombreProducto.Clear();
+                    txtPrecio.Clear();
+                    txtCantidad.Clear();
+                    txtIdCliente.Clear();
+                    txtNombreCliente.Clear();
+                    dgvDetallesVentas.Rows.Clear();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error inesperado al guardar la venta", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }         
+        }
+
+        private void GuardarDetallesVenta()
+        {
+            try
+            {
+                if (stock < int.Parse(txtCantidad.Text.ToString().Trim()) || int.Parse(txtCantidad.Text.ToString().Trim()) == 0)
+                    MessageBox.Show("La cantidad solicitada excede el stock disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    double total = int.Parse(txtCantidad.Text) * double.Parse(txtPrecio.Text.Replace('.', ','));
+                    dgvDetallesVentas.Rows.Add(txtIdProducto.Text.Trim(), txtNombreProducto.Text.Trim(), txtCantidad.Text.Trim(), txtPrecio.Text.Replace(',', '.').Trim(), total);
+                    txtIdProducto.Clear();
+                    txtNombreProducto.Clear();
+                    txtPrecio.Clear();
+                    txtCantidad.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void fmCaja_Load(object sender, EventArgs e)
         {
             menu = new FmMenu();
             txtFecha.Text = DateTime.Now.ToString().Split(' ')[0];
             txtidEmpleado.Text = menu.IdUsuario.ToString();
             ApellidoEmpleado();
-        }      
+            txtFecha.Enabled = false;
+            txtidEmpleado.Enabled = false;
+            txtIdProducto.Enabled = false;
+            txtNombreProducto.Enabled = false;
+            txtPrecio.Enabled = false;
+            txtSubtotal.Enabled = false;
+            txtIva.Enabled = false;
+            txtTotal.Enabled = false;
+            txtCambio.Enabled = false;
+            txtNombreEmpleado.Enabled = false;
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            fmGestionarClientes Clientes = new fmGestionarClientes();
+            this.AddOwnedForm(Clientes);
+            Clientes.ShowDialog();
+            ApellidoCliente();
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            fmGestionarMedicina Medicinas = new fmGestionarMedicina();
+            this.AddOwnedForm(Medicinas);
+            Medicinas.ShowDialog();
+        }
+
+        private void btnGenerarFactura_Click(object sender, EventArgs e)
+        {
+            GenerarVenta();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            GuardarDetallesVenta();
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255)) e.Handled = true;
+        }
+
+        private void txtPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtPago.Text.Length == 0)
+            {
+                if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255)) e.Handled = true;
+            }
+            else
+                if (e.KeyChar != ',' && (e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8) e.Handled = true;
+        }
+
+        private void dgvDetallesVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                if (txtCambio.Text.Length == 0)
+                    if (dgvDetallesVentas.Columns[e.ColumnIndex] == dgvDetallesVentas.Columns[dgvDetallesVentas.Columns.Count - 1])
+                    {
+                        DialogResult res = MessageBox.Show("¿Esta seguro de que desea eliminar esta venta?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (res == DialogResult.Yes)
+                        {
+                            dgvDetallesVentas.Rows.Remove(dgvDetallesVentas.CurrentRow);
+                        }
+                    }
+        }
     }
 }

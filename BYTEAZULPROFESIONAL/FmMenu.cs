@@ -103,6 +103,8 @@ namespace BYTEAZULPROFESIONAL
                 if (logica.EstaCajaAbierta(idEmpleadoInt))
                 {
                     MessageBox.Show("La caja YA está abierta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PanelContenedorForm(new fmCaja());
+                    ocultarMenu();
                 }
                 else
                 {
@@ -114,9 +116,9 @@ namespace BYTEAZULPROFESIONAL
                     // Mostramos el hijo y esperamos
                     if (frmPequeño.ShowDialog() == DialogResult.OK)
                     {
-                        MessageBox.Show("Sesión iniciada. Ahora puedes ir a Ventas u compras.", "Sistema");
-               
-                    }
+                        MessageBox.Show("Sesión iniciada. Ahora puedes ir a Ventas u compras.", "Sistema");     
+                    }                   
+
                 }
             }
             catch (Exception ex)

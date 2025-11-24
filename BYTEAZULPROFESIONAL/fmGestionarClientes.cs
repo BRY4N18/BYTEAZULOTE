@@ -15,5 +15,27 @@ namespace BYTEAZULPROFESIONAL
         {
             InitializeComponent();
         }
+
+        private void dgvVerClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int fila = dgvVerClientes.CurrentCell.RowIndex;
+                if (dgvVerClientes.Rows[fila].Cells["Estado"].Value.ToString().Trim() == "Activo")
+                {
+                    fmCaja caja = Owner as fmCaja;
+                    caja.txtIdCliente.Text = dgvVerClientes.Rows[fila].Cells["ID Cliente"].Value.ToString();
+                    caja.txtNombreCliente.Text = dgvVerClientes.Rows[fila].Cells["Apellidos"].Value.ToString();
+                    caja.txtNombreCliente.Enabled = false;
+                    caja.txtIdCliente.Enabled = false;
+                    this.Hide();
+                }
+                else MessageBox.Show("Este cliente no se encuentra disponible");
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show("Error al seleccionar el cliente: " + ex.Message);
+            }
+        }
     }
 }

@@ -76,6 +76,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(105, 28);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtIdProducto
             // 
@@ -120,6 +121,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(102, 21);
             this.txtCantidad.TabIndex = 2;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // txtFecha
             // 
@@ -197,6 +199,7 @@
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(141, 21);
             this.txtPago.TabIndex = 6;
+            this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
             // 
             // txtCambio
             // 
@@ -242,6 +245,7 @@
             this.btnGenerarFactura.Size = new System.Drawing.Size(141, 35);
             this.btnGenerarFactura.TabIndex = 7;
             this.btnGenerarFactura.UseVisualStyleBackColor = false;
+            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
             // 
             // btnCerrarCaja
             // 
@@ -276,6 +280,7 @@
             this.btnCliente.Size = new System.Drawing.Size(15, 19);
             this.btnCliente.TabIndex = 4;
             this.btnCliente.UseVisualStyleBackColor = false;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // btnBuscarProducto
             // 
@@ -293,6 +298,7 @@
             this.btnBuscarProducto.Size = new System.Drawing.Size(15, 19);
             this.btnBuscarProducto.TabIndex = 1;
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // dgvDetallesVentas
             // 
@@ -318,6 +324,7 @@
             this.dgvDetallesVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetallesVentas.Size = new System.Drawing.Size(502, 233);
             this.dgvDetallesVentas.TabIndex = 147;
+            this.dgvDetallesVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetallesVentas_CellClick);
             // 
             // Lote
             // 
