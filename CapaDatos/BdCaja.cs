@@ -89,5 +89,72 @@ namespace CapaDatos
             }
             catch (Exception ex) { return (false, ex.Message); }
         }
+
+        public (int, bool, string) GuardarVenta(int idcliente, int idempleado, decimal totalventa)
+        {
+            try
+            {
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_IN_VENTAS", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdCliente", idcliente);
+                        cmd.Parameters.AddWithValue("@IdEmpleado", idempleado);
+                        cmd.Parameters.AddWithValue("@TotalVenta", totalventa);
+
+                        SqlParameter idventa = new SqlParameter("@IdVenta", SqlDbType.Int) { Direction = ParameterDirection.Output };
+                        SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(idventa); 
+                        cmd.Parameters.Add(res); 
+                        cmd.Parameters.Add(msj);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToInt32(idventa.Value), Convert.ToBoolean(res.Value), msj.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex) 
+            { 
+                return (0, false, ex.Message);
+            }
+        }
+
+        public (bool, string) GuardarDetallesVenta(int idVenta, int idproducto, int cantidadsolicitada, decimal preciounitario)
+        {
+            try
+            {
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_IN_DETALLES_VENTA", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdVenta", idVenta);
+                        cmd.Parameters.AddWithValue("@IdProducto", idproducto);
+                        cmd.Parameters.AddWithValue("@CantidadSolicitada", cantidadsolicitada);
+                        cmd.Parameters.AddWithValue("@PrecioUnitario", preciounitario);
+
+                        SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(res); 
+                        cmd.Parameters.Add(msj);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToBoolean(res.Value), msj.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex) 
+            { 
+                return (false, ex.Message);
+            }
+        }
     }
 }

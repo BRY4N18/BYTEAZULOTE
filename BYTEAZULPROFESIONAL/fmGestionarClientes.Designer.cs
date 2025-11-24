@@ -57,7 +57,7 @@
             this.dgvVerClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvVerClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVerClientes.Location = new System.Drawing.Point(74, 138);
-            this.dgvVerClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVerClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVerClientes.MultiSelect = false;
             this.dgvVerClientes.Name = "dgvVerClientes";
             this.dgvVerClientes.ReadOnly = true;
@@ -67,6 +67,7 @@
             this.dgvVerClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVerClientes.Size = new System.Drawing.Size(697, 321);
             this.dgvVerClientes.TabIndex = 14;
+            this.dgvVerClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerClientes_CellContentDoubleClick);
             // 
             // txtBuscar
             // 
@@ -74,7 +75,7 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(214, 76);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(386, 16);

@@ -11,8 +11,7 @@
       "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC0C5D7-133A-4E05-8D7D-90572493FABC}|CapaLogica\\CapaLogica.csproj|c:\\users\\asus\\desktop\\byteazulote\\capalogica\\csclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EC0C5D7-133A-4E05-8D7D-90572493FABC}|CapaLogica\\CapaLogica.csproj|solutionrelative:capalogica\\csclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,10 +35,23 @@
               "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\BYTEAZULPROFESIONAL\\fmCaja.cs",
               "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC0AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:48:28.151Z",
+              "WhenOpened": "2025-11-24T11:16:23.847Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fmCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs [Solo lectura]",
+              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs [Solo lectura]",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T11:09:20.687Z",
+              "EditorCaption": " [Solo lectura]"
             },
             {
               "$type": "Document",
@@ -50,21 +62,8 @@
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
               "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:45:21.845Z",
+              "WhenOpened": "2025-11-24T09:22:20.457Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CsClientes.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\CapaLogica\\CsClientes.cs",
-              "RelativeDocumentMoniker": "CapaLogica\\CsClientes.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\CapaLogica\\CsClientes.cs",
-              "RelativeToolTip": "CapaLogica\\CsClientes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:44:25.867Z",
-              "EditorCaption": ""
             }
           ]
         }

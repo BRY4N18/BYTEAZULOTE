@@ -57,7 +57,7 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(214)))), ((int)(((byte)(216)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Location = new System.Drawing.Point(207, 80);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(404, 13);
             this.txtBuscar.TabIndex = 41;
@@ -73,7 +73,7 @@
             this.dgvVerMedicina.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvVerMedicina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVerMedicina.Location = new System.Drawing.Point(36, 147);
-            this.dgvVerMedicina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVerMedicina.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVerMedicina.MultiSelect = false;
             this.dgvVerMedicina.Name = "dgvVerMedicina";
             this.dgvVerMedicina.ReadOnly = true;
@@ -83,6 +83,7 @@
             this.dgvVerMedicina.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVerMedicina.Size = new System.Drawing.Size(771, 350);
             this.dgvVerMedicina.TabIndex = 42;
+            this.dgvVerMedicina.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerMedicina_CellContentDoubleClick);
             // 
             // fmGestionarMedicina
             // 
