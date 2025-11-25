@@ -61,16 +61,16 @@
             this.btnVerificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnVerificar.FlatAppearance.BorderSize = 0;
-            this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
+            this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerificar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVerificar.Location = new System.Drawing.Point(598, 151);
+            this.btnVerificar.Location = new System.Drawing.Point(590, 156);
             this.btnVerificar.Name = "btnVerificar";
-            this.btnVerificar.Size = new System.Drawing.Size(119, 42);
+            this.btnVerificar.Size = new System.Drawing.Size(158, 39);
             this.btnVerificar.TabIndex = 76;
-            this.btnVerificar.Text = "Verificar cédula";
+            this.btnVerificar.Text = "Verificar identificación";
             this.btnVerificar.UseVisualStyleBackColor = false;
             this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
@@ -98,17 +98,19 @@
             this.txtusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusuario.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(317, 163);
+            this.txtusuario.Location = new System.Drawing.Point(317, 165);
             this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.MaxLength = 30;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(234, 17);
             this.txtusuario.TabIndex = 118;
+            this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusuario_KeyPress);
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseña.Enabled = false;
             this.txtContraseña.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(317, 253);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
@@ -116,11 +118,13 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(234, 17);
             this.txtContraseña.TabIndex = 1;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // txtConfirmarContraseña
             // 
             this.txtConfirmarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmarContraseña.Enabled = false;
             this.txtConfirmarContraseña.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContraseña.Location = new System.Drawing.Point(317, 345);
             this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(2);
@@ -128,6 +132,7 @@
             this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             this.txtConfirmarContraseña.Size = new System.Drawing.Size(234, 17);
             this.txtConfirmarContraseña.TabIndex = 2;
+            this.txtConfirmarContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmarContraseña_KeyPress);
             // 
             // fmCrearCuentas
             // 

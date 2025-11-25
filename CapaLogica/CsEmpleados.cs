@@ -90,5 +90,11 @@ namespace CapaLogica
             bdempleados = new BdEmpleados();
             return bdempleados.CrearCuenta(identificacion, contrasena);
         }
+
+        public (bool, string) VerificarIdentificacionEmpleado(string identificacion)
+        {
+            bdempleados = new BdEmpleados();
+            return bdempleados.VerificarIdentificacionEmpleado(identificacion);
+        }
     }
 }
