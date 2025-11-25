@@ -29,13 +29,13 @@ namespace BYTEAZULPROFESIONAL
         {
             try
             {
-                int idusuario = int.Parse(menu.IdUsuario);
+                int idusuario = int.Parse(menu.IdUsuario.Trim());
                 bool resultado;
                 string apellidoempleado = "";
                 csempleados = new CsEmpleados();
                 (resultado, apellidoempleado) = csempleados.ApellidoEmpleado(idusuario);
                 if (!resultado)
-                    MessageBox.Show(idusuario.ToString(), resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    MessageBox.Show(apellidoempleado, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                 else
                     txtNombreEmpleado.Text = apellidoempleado.ToString();
 

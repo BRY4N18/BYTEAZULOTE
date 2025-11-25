@@ -28,7 +28,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@IdUsuario", idusuario);
                         cmd.Parameters.AddWithValue("@TipoUsuario", 'C');
 
-                        SqlParameter resultadoParam = new SqlParameter("@Apellido", SqlDbType.VarChar) { Direction = ParameterDirection.Output };
+                        SqlParameter resultadoParam = new SqlParameter("@Apellido", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
 
                         cmd.Parameters.Add(resultadoParam);
 

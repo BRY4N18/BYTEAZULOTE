@@ -106,7 +106,7 @@ namespace CapaDatos
 
                         SqlParameter idventa = new SqlParameter("@IdVenta", SqlDbType.Int) { Direction = ParameterDirection.Output };
                         SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
-                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
 
                         cmd.Parameters.Add(idventa); 
                         cmd.Parameters.Add(res); 
@@ -140,7 +140,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@PrecioUnitario", preciounitario);
 
                         SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
-                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
 
                         cmd.Parameters.Add(res); 
                         cmd.Parameters.Add(msj);

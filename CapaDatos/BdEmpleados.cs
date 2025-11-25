@@ -59,7 +59,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@IdUsuario", idusuario);
                         cmd.Parameters.AddWithValue("@TipoUsuario", 'E');
 
-                        SqlParameter resultadoParam = new SqlParameter("@Apellido", SqlDbType.VarChar) { Direction = ParameterDirection.Output };
+                        SqlParameter resultadoParam = new SqlParameter("@Apellido", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
 
                         cmd.Parameters.Add(resultadoParam);
 

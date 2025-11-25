@@ -23,16 +23,12 @@ namespace BYTEAZULPROFESIONAL
             try
             {
                 int fila = dgvVerClientes.CurrentCell.RowIndex;
-                if (dgvVerClientes.Rows[fila].Cells["Estado"].Value.ToString().Trim() == "Activo")
-                {
-                    fmCaja caja = Owner as fmCaja;
-                    caja.txtIdCliente.Text = dgvVerClientes.Rows[fila].Cells["ID Cliente"].Value.ToString();
-                    caja.txtNombreCliente.Text = dgvVerClientes.Rows[fila].Cells["Apellidos"].Value.ToString();
-                    caja.txtNombreCliente.Enabled = false;
-                    caja.txtIdCliente.Enabled = false;
-                    this.Hide();
-                }
-                else MessageBox.Show("Este cliente no se encuentra disponible");
+                fmCaja caja = Owner as fmCaja;
+                caja.txtIdCliente.Text = dgvVerClientes.Rows[fila].Cells["colId"].Value.ToString();
+                caja.txtNombreCliente.Text = dgvVerClientes.Rows[fila].Cells["NombreCliente"].Value.ToString();
+                caja.txtNombreCliente.Enabled = false;
+                caja.txtIdCliente.Enabled = false;
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -67,6 +63,7 @@ namespace BYTEAZULPROFESIONAL
 
             // Columna Nombre Completo
             DataGridViewTextBoxColumn colNombre = new DataGridViewTextBoxColumn();
+            colNombre.Name = "NombreCliente";
             colNombre.HeaderText = "Cliente";
             colNombre.DataPropertyName = "NombreCompleto";
             colNombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

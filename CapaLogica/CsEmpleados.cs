@@ -27,7 +27,7 @@ namespace CapaLogica
         public (bool, string) ApellidoEmpleado (int idusuario)
         {
             string apellido = bdempleados.ApellidoEmpleado(idusuario);
-            if (apellido == string.Empty) return (false, "Empleado no encontrado");
+            if (apellido == null) return (false, "Empleado no encontrado");
             return (true,  apellido);
         }
         // Buscar en Grid

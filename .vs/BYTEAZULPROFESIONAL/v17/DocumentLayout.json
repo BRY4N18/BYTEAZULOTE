@@ -1,17 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\byteazulote\\byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\byteazulotevrf\\byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\byteazulotevrf\\byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\byteazulote\\byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\byteazulotevrf\\byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\byteazulotevrf\\byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D49D43-B21A-4643-9B2E-FAC2F78B366C}|CapaDatos\\CapaDatos.csproj|c:\\users\\asus\\desktop\\byteazulotevrf\\capadatos\\bdcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99D49D43-B21A-4643-9B2E-FAC2F78B366C}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\bdcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC0C5D7-133A-4E05-8D7D-90572493FABC}|CapaLogica\\CapaLogica.csproj|c:\\users\\asus\\desktop\\byteazulotevrf\\capalogica\\cscaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EC0C5D7-133A-4E05-8D7D-90572493FABC}|CapaLogica\\CapaLogica.csproj|solutionrelative:capalogica\\cscaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,40 +43,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "fmCaja.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBQAAAAeAAAAAAAAAA==",
+              "Title": "fmGestionarClientes.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwB0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T11:16:23.847Z",
+              "WhenOpened": "2025-11-25T16:43:56.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fmGestionarClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T16:40:07.345Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fmCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAkwKEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T16:14:36.669Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "fmCaja.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "ToolTip": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs [Solo lectura]",
-              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\2e603655-d41f-4500-864e-eea5966abebb_BYTEAZULPROFESIONALVA-master.zip.ebb\\BYTEAZULPROFESIONAL-master\\BYTEAZULPROFESIONAL\\fmCaja.cs [Solo lectura]",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIgAAAAzAAAAAAAAAA==",
+              "Title": "fmCaja.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T11:09:20.687Z",
-              "EditorCaption": " [Solo lectura]"
+              "WhenOpened": "2025-11-25T16:14:33.883Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "fmCaja.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTE\\BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
-              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
+              "DocumentIndex": 5,
+              "Title": "CsCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\CapaLogica\\CsCaja.cs",
+              "RelativeDocumentMoniker": "CapaLogica\\CsCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\CapaLogica\\CsCaja.cs",
+              "RelativeToolTip": "CapaLogica\\CsCaja.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T09:22:20.457Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-11-25T14:57:47.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BdCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\CapaDatos\\BdCaja.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\BdCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\BYTEAZULOTEVRF\\CapaDatos\\BdCaja.cs",
+              "RelativeToolTip": "CapaDatos\\BdCaja.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:57:45.875Z",
+              "EditorCaption": ""
             }
           ]
         }
