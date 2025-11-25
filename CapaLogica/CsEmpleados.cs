@@ -84,5 +84,11 @@ namespace CapaLogica
             return bdempleados.ActualizarEmpleado(idEmpleado, idCargo, idGenero, idEmpresa,
                 identificacion, apellidos, nombres, telefono, direccion, fechaNac, fechaContratacion, correo, estado);
         }
+
+        public (bool, string) CrearCuenta (string identificacion, string contrasena)
+        {
+            bdempleados = new BdEmpleados();
+            return bdempleados.CrearCuenta(identificacion, contrasena);
+        }
     }
 }

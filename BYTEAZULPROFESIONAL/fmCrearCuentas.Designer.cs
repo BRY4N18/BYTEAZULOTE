@@ -56,7 +56,7 @@
             // 
             // btnVerificar
             // 
-            this.btnVerificar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVerificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnVerificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVerificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
@@ -64,12 +64,15 @@
             this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerificar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVerificar.Location = new System.Drawing.Point(594, 197);
+            this.btnVerificar.Location = new System.Drawing.Point(598, 151);
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(119, 42);
             this.btnVerificar.TabIndex = 76;
+            this.btnVerificar.Text = "Verificar cédula";
             this.btnVerificar.UseVisualStyleBackColor = false;
+            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
             // btnCrearCuentaEmpleado
             // 
@@ -82,12 +85,13 @@
             this.btnCrearCuentaEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCrearCuentaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearCuentaEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnCrearCuentaEmpleado.Location = new System.Drawing.Point(306, 420);
+            this.btnCrearCuentaEmpleado.Location = new System.Drawing.Point(307, 419);
             this.btnCrearCuentaEmpleado.Name = "btnCrearCuentaEmpleado";
             this.btnCrearCuentaEmpleado.Size = new System.Drawing.Size(253, 52);
             this.btnCrearCuentaEmpleado.TabIndex = 116;
             this.btnCrearCuentaEmpleado.TabStop = false;
             this.btnCrearCuentaEmpleado.UseVisualStyleBackColor = false;
+            this.btnCrearCuentaEmpleado.Click += new System.EventHandler(this.btnCrearCuentaEmpleado_Click);
             // 
             // txtusuario
             // 
@@ -95,7 +99,7 @@
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusuario.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(317, 163);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.MaxLength = 30;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(234, 17);
@@ -107,7 +111,7 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(317, 253);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.MaxLength = 30;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(234, 17);
@@ -119,7 +123,7 @@
             this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmarContraseña.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContraseña.Location = new System.Drawing.Point(317, 345);
-            this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmarContraseña.MaxLength = 30;
             this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             this.txtConfirmarContraseña.Size = new System.Drawing.Size(234, 17);

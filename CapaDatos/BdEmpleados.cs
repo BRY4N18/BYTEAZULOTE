@@ -235,5 +235,38 @@ namespace CapaDatos
             }
             catch (Exception ex) { return (false, ex.Message); }
         }
+
+        public (bool, string) CrearCuenta(string identificacion, string contrasena)
+        {
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_IN_AGREGAR_CUENTA", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@Identificacion", identificacion);
+                        cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+
+                        SqlParameter resultado = new SqlParameter("@Resultados", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter mensaje = new SqlParameter("@Resultados", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(resultado);
+                        cmd.Parameters.Add(mensaje);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToBoolean(resultado.Value), mensaje.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, "Error al crear la cuenta " + ex.Message);
+            }
+        }
     }
 }
