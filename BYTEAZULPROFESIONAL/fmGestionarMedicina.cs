@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace BYTEAZULPROFESIONAL
 {
     public partial class fmGestionarMedicina : Form
     {
+        CsMedicinas csmedicina;
         public fmGestionarMedicina()
         {
             InitializeComponent();
@@ -40,6 +42,18 @@ namespace BYTEAZULPROFESIONAL
             {
                 MessageBox.Show("Error al seleccionar el producto: " + ex.Message);
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            csmedicina = new CsMedicinas();
+            dgvVerMedicina.DataSource = csmedicina.Buscar(txtBuscar.Text.Trim());
+        }
+
+        private void fmGestionarMedicina_Load(object sender, EventArgs e)
+        {
+            csmedicina = new CsMedicinas();
+            dgvVerMedicina.DataSource = csmedicina.Buscar(txtBuscar.Text.Trim());
         }
     }
 }

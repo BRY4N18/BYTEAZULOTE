@@ -45,6 +45,7 @@
     <Compile Include="CsClientes.cs" />
     <Compile Include="CsEmpleados.cs" />
     <Compile Include="CsMedicinas.cs" />
+    <Compile Include="CsProveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
