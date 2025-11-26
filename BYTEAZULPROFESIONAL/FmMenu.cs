@@ -240,7 +240,49 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnAgregarLotes_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                // --- CORRECCIÓN 1: VALIDACIÓN DE ID ---
+                // Evita el error "El valor no puede ser nulo"
+                int idEmpleadoInt = 0;
+                if (string.IsNullOrEmpty(IdUsuario) || !int.TryParse(IdUsuario, out idEmpleadoInt))
+                {
+                    idEmpleadoInt = 1; // ID de respaldo por si falla
+                }
+
+                CsCaja logica = new CsCaja();
+
+                // 2. VERIFICAR SI LA CAJA ESTÁ ABIERTA
+                if (logica.EstaCajaAbierta(idEmpleadoInt))
+                {
+                    // --- CORRECCIÓN 2: USAR LA MISMA INSTANCIA ---
+                    fmAgregarLotes lotes = new fmAgregarLotes(); // Asegúrate que el nombre de la clase sea correcto (Singular o Plural)
+
+                    // Le pasamos el ID a ESTA instancia
+                    lotes.IdEmpleadoLogueado = idEmpleadoInt;
+
+                    // Pasamos ESTA MISMA instancia al panel (NO hagas 'new' otra vez aquí)
+                    PanelContenedorForm(lotes);
+
+                    ocultarMenu();
+                }
+                else
+                {
+                    // 3. CAJA CERRADA -> ABRIR EL FORMULARIO PEQUEÑO
+                    fmAbrirCaja frmPequeño = new fmAbrirCaja();
+                    frmPequeño.IdEmpleadoRecibido = idEmpleadoInt;
+
+                    if (frmPequeño.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("Sesión iniciada. Ahora puedes ingresar.", "Sistema");
+                        // Opcional: Podrías abrir lotes automáticamente aquí también si quieres
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en menú: " + ex.Message);
+            }
         }
 
         private void btnAdministracion_Click(object sender, EventArgs e)

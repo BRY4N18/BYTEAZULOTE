@@ -44,6 +44,7 @@
     <Compile Include="BdCaja.cs" />
     <Compile Include="BdCategorias.cs" />
     <Compile Include="BdClientes.cs" />
+    <Compile Include="BdCompra.cs" />
     <Compile Include="BdConexionSQL.cs" />
     <Compile Include="BdEmpleados.cs" />
     <Compile Include="BdMedicinas.cs" />
