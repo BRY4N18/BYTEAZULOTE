@@ -66,28 +66,6 @@ namespace BYTEAZULPROFESIONAL
             }
         }
 
-        private DataTable ConvertirDgvADataTable()
-        {
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn columna in dgvDetallesVentas.Columns)
-            {
-                dt.Columns.Add(columna.HeaderText);
-            }
-            foreach (DataGridViewRow fila in dgvDetallesVentas.Rows)
-            {
-                if (!fila.IsNewRow)
-                {
-                    DataRow dr = dt.NewRow();
-                    for (int i = 0; i < fila.Cells.Count; i++)
-                    {
-                        dr[i] = fila.Cells[i].Value ?? DBNull.Value;
-                    }
-                    dt.Rows.Add(dr);
-                }
-            }
-            return dt;
-        }   
-
         private void GenerarVenta()
         {
             try
@@ -95,8 +73,17 @@ namespace BYTEAZULPROFESIONAL
                 cscaja = new CsCaja();
                 int idempleado = int.Parse(txtidEmpleado.Text.ToString().Trim());
                 int idcliente = int.Parse(txtIdCliente.Text.ToString().Trim());
-                decimal totalventa = decimal.Parse(txtTotal.Text.ToString().Replace(',', '.').Trim());
-                (bool resultado, string mensaje) = cscaja.GenerarVenta(idempleado, idcliente, totalventa, ConvertirDgvADataTable());
+                //decimal totalventa = decimal.Parse(txtTotal.Text.ToString().Replace(',', '.').Trim());
+                decimal totalventa = 30.0m;
+
+                (int idventa, bool resultado, string mensaje) = cscaja.GenerarVenta(idempleado, idcliente, totalventa);
+                if (resultado)
+                {
+                    foreach (DataGridViewRow row in dgvDetallesVentas.Rows)
+                    {
+                        (resultado, mensaje) = cscaja.GenerarDetallesVenta(idventa, int.Parse(row.Cells[0].Value.ToString()), int.Parse(row.Cells[2].Value.ToString()), decimal.Parse(row.Cells[3].Value.ToString()));
+                    }
+                }
 
                 if (!resultado) MessageBox.Show(mensaje, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                 else
@@ -111,10 +98,10 @@ namespace BYTEAZULPROFESIONAL
                     dgvDetallesVentas.Rows.Clear();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error inesperado al guardar la venta", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }         
+                MessageBox.Show("Error inesperado al guardar la venta: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void GuardarDetallesVenta()
@@ -125,12 +112,13 @@ namespace BYTEAZULPROFESIONAL
                     MessageBox.Show("La cantidad solicitada excede el stock disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    double total = int.Parse(txtCantidad.Text) * double.Parse(txtPrecio.Text.Replace('.', ','));
-                    dgvDetallesVentas.Rows.Add(txtIdProducto.Text.Trim(), txtNombreProducto.Text.Trim(), txtCantidad.Text.Trim(), txtPrecio.Text.Replace(',', '.').Trim(), total);
+                    double total = int.Parse(txtCantidad.Text) * double.Parse(txtPrecio.Text);
+                    dgvDetallesVentas.Rows.Add(txtIdProducto.Text.Trim(), txtNombreProducto.Text.Trim(), txtCantidad.Text.Trim(), txtPrecio.Text.Replace(',', '.').Trim(), total.ToString().Replace(',', '.').Trim());
                     txtIdProducto.Clear();
                     txtNombreProducto.Clear();
                     txtPrecio.Clear();
                     txtCantidad.Clear();
+                    txtPrecio.Text = "10";
                 }
             }
             catch (Exception ex)
@@ -155,6 +143,7 @@ namespace BYTEAZULPROFESIONAL
             txtTotal.Enabled = false;
             txtCambio.Enabled = false;
             txtNombreEmpleado.Enabled = false;
+            txtPrecio.Text = "10";
         }
 
         private void btnCliente_Click(object sender, EventArgs e)

@@ -161,7 +161,6 @@ C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\bin\Debug\ru\Microsoft.Sql
 C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.csproj.AssemblyReference.cache
-C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.exe.config
 C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAbrirCaja.resources
 C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAgregarClientes.resources
 C:\Users\ASUS\Desktop\BYTEAZULOTE\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAgregarEmpleados.resources

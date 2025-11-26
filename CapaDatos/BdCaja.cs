@@ -108,8 +108,8 @@ namespace CapaDatos
                         SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
                         SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
 
-                        cmd.Parameters.Add(idventa); 
-                        cmd.Parameters.Add(res); 
+                        cmd.Parameters.Add(idventa);
+                        cmd.Parameters.Add(res);
                         cmd.Parameters.Add(msj);
 
                         cmd.ExecuteNonQuery();
@@ -118,16 +118,16 @@ namespace CapaDatos
                     }
                 }
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 return (0, false, ex.Message);
             }
         }
 
         public (bool, string) GuardarDetallesVenta(int idVenta, int idproducto, int cantidadsolicitada, decimal preciounitario)
         {
-            try
-            {
+            //try
+            //{
                 using (SqlConnection conn = BdConexion.ObtenerConexion())
                 {
                     conn.Open();
@@ -142,7 +142,7 @@ namespace CapaDatos
                         SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
                         SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
 
-                        cmd.Parameters.Add(res); 
+                        cmd.Parameters.Add(res);
                         cmd.Parameters.Add(msj);
 
                         cmd.ExecuteNonQuery();
@@ -150,11 +150,11 @@ namespace CapaDatos
                         return (Convert.ToBoolean(res.Value), msj.Value.ToString());
                     }
                 }
-            }
-            catch (Exception ex) 
-            { 
-                return (false, ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    return (false, ex.Message);
+            //}
         }
     }
 }
