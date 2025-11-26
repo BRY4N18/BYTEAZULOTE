@@ -35,6 +35,65 @@ namespace CapaDatos
             }
             return dtVerMedicina;
         }
-        //---------------------------------------------------------------
+
+        public (bool, string) AgregarMedicina(string Producto, string Descripcion)
+        {
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_IN_TbProductos", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@Producto", Producto);
+                        cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
+                        cmd.Parameters.AddWithValue("@CostoPromedio", 0);
+
+                        SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter mensajeParam = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(resultadoParam);
+                        cmd.Parameters.Add(mensajeParam);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToBoolean(resultadoParam.Value), mensajeParam.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, "Error BD: " + ex.Message);
+            }
+        }
+        public int ObtenerUltimoProductoId()
+        {
+            int ultimoId = 0;
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_ObtenerIDdelUltimoProducto", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int id))
+                        {
+                            ultimoId = id;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el último ID de producto: " + ex.Message);
+            }
+            return ultimoId;
+        }
     }
 }

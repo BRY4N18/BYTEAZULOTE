@@ -49,6 +49,18 @@ namespace CapaLogica
             iva = iv;
             estado = estad;
         }
+        public (bool, string) AgregarMedicina(string Producto, string Descripcion)
+        {
+            bdMedicina = new BdMedicinas();
+            return bdMedicina.AgregarMedicina(Producto, Descripcion);
+        }
+
+        public int ObtenerUltimoProductoId()
+        {
+            bdMedicina = new BdMedicinas();
+            return bdMedicina.ObtenerUltimoProductoId();
+        }
+
 
         // SEGUNDA PARTE - GESTION DE MEDICINA - FM GESTIONAR MEDICINA
 
