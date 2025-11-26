@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,7 @@ namespace CapaLogica
             return bdCaja.ObtenerSesionAbierta(idEmpleado) > 0;
         }
 
-        public (bool, string) GenerarVenta (int idempleado, int idcliente, decimal totalventa, DataTable detallescompras)
+        public (int, bool, string) GenerarVenta (int idempleado, int idcliente, decimal totalventa)
         {
             try
             {
@@ -46,32 +47,20 @@ namespace CapaLogica
                 string mensaje;
                 (idventa, resultado, mensaje) = bdCaja.GuardarVenta(idcliente, idempleado, totalventa);
 
-                if (!resultado)
-                {
-                    return (false, mensaje);
-                }
+                if (!resultado) return (0, false, mensaje);
 
-                bool resultadoDetalles;
-                string mensajeDetalles;
-                foreach (DataRow fila in detallescompras.Rows)
-                {
-                    int idproducto = Convert.ToInt32(fila["Id Producto"]);
-                    int cantidad = Convert.ToInt32(fila["Cantidad"]);
-                    decimal preciounitario = Convert.ToDecimal(fila["Precio Unitario"]);
-
-                    (resultadoDetalles, mensajeDetalles) = bdCaja.GuardarDetallesVenta(idventa, idproducto, cantidad, preciounitario);
-                    if (!resultadoDetalles)
-                    {
-                        return (false, mensajeDetalles);
-                    }
-                }
-
-                return (true, "Venta generada exitosamente");
+                return (idventa, true, "Venta generada exitosamente");
             }
             catch (Exception)
             {
-                return (false, "Error al generar la venta");
-            } 
+                return (0, false, "Error al generar la venta");
+            }
+        }
+
+        public (bool, string) GenerarDetallesVenta(int idventa, int idproducto, int cantidad,  decimal preciounitario)
+        {
+            bdCaja = new BdCaja();
+            return bdCaja.GuardarDetallesVenta(idventa, idproducto, cantidad, preciounitario);
         }
     }
 }
