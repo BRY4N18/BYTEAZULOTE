@@ -42,19 +42,23 @@ namespace CapaLogica
             email = mail;
             estado = stado;
         }
-        public bool AgregarProveedor() // Metodo para Agregar un Proveedor
+        public (string, bool, int) AgregarProveedor(string nombre, string ruc, string celular, string direccion, string email) // Metodo para Agregar un Proveedor
         {
-            if (Celular == "" || Direccion == "" || Email == "" || Nombre == "" || Servicios == "" || Estado == "")
-            {
-                //MessageBox.Show("Algunos campos están vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else
-            {
-                //conexion.Ingresar_Modificar("Insert into Proveedores (prv_nombre, prv_celular, prv_servicios, prv_direccion, prv_email, prv_estado) Values ('" + Nombre + "', '" + Celular + "', '" + Servicios + "', '" + Direccion + "', '" + Email + "', '" + Estado + "')");
-                //MessageBox.Show("Proveedor Agregado Exitosamente :D");
-                return true;
-            }
+            bdProveedores = new BdProveedores();
+            var resultado = bdProveedores.RegistrarProveedor(nombre, ruc, celular, direccion, email);
+            return (resultado.Item2, resultado.Item1, resultado.Item3);
+        }
+        public (string, bool) AgregarProveedorServicio(int idProveedor, int idServicio) // Metodo para Agregar un Servicio a un Proveedor
+        {
+            bdProveedores = new BdProveedores();
+            var resultado = bdProveedores.RegistrarServicioProveedor(idProveedor, idServicio);
+            return (resultado.Item2, resultado.Item1);
+        }
+        public (string, bool) AgregarProveedorProducto(int idProveedor, int idProducto) // Metodo para Agregar un Servicio a un Proveedor
+        {
+            bdProveedores = new BdProveedores();
+            var resultado = bdProveedores.RegistrarProductoProveedor(idProveedor, idProducto);
+            return (resultado.Item2, resultado.Item1);
         }
         public bool ModificarProveedor() // Metodo para modificar un proveedor
         {
@@ -82,6 +86,13 @@ namespace CapaLogica
             bdProveedores = new BdProveedores();
             VerProveedores = bdProveedores.BuscarProveedores(buscar);
             return VerProveedores;
+        }
+        public DataTable ListarServicios()
+        {
+            DataTable VerServicios;
+            bdProveedores = new BdProveedores();
+            VerServicios = bdProveedores.ServiciosProveedores();
+            return VerServicios;
         }
     }
 }

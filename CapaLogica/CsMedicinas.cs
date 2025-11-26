@@ -10,7 +10,6 @@ namespace CapaLogica
 {
     public class CsMedicinas
     {
-        static Random rnd = new Random(DateTime.Now.Millisecond);
         BdMedicinas bdMedicina;
         // Atributos
         string nombreMedicina, idMedicina, categoria, descripcion, estado, iva;
