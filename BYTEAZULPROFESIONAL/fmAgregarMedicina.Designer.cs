@@ -47,10 +47,10 @@
             this.txtNombreMedicina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtNombreMedicina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreMedicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreMedicina.Location = new System.Drawing.Point(104, 140);
-            this.txtNombreMedicina.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreMedicina.Location = new System.Drawing.Point(78, 114);
+            this.txtNombreMedicina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreMedicina.Name = "txtNombreMedicina";
-            this.txtNombreMedicina.Size = new System.Drawing.Size(384, 20);
+            this.txtNombreMedicina.Size = new System.Drawing.Size(288, 16);
             this.txtNombreMedicina.TabIndex = 0;
             this.txtNombreMedicina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -59,10 +59,10 @@
             this.txtCantidadMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtCantidadMedida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCantidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadMedida.Location = new System.Drawing.Point(132, 441);
-            this.txtCantidadMedida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCantidadMedida.Location = new System.Drawing.Point(99, 358);
+            this.txtCantidadMedida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCantidadMedida.Name = "txtCantidadMedida";
-            this.txtCantidadMedida.Size = new System.Drawing.Size(328, 20);
+            this.txtCantidadMedida.Size = new System.Drawing.Size(246, 16);
             this.txtCantidadMedida.TabIndex = 3;
             this.txtCantidadMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCantidadMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadMedida_KeyPress);
@@ -72,10 +72,11 @@
             this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(620, 140);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcion.Location = new System.Drawing.Point(465, 114);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.MaxLength = 255;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(383, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(287, 16);
             this.txtDescripcion.TabIndex = 3;
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -84,10 +85,10 @@
             this.txtPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(109, 240);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrecio.Location = new System.Drawing.Point(82, 195);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(371, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(278, 16);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
@@ -102,10 +103,9 @@
             this.btnAgregarMedicina.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnAgregarMedicina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarMedicina.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregarMedicina.Location = new System.Drawing.Point(157, 542);
-            this.btnAgregarMedicina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarMedicina.Location = new System.Drawing.Point(118, 440);
             this.btnAgregarMedicina.Name = "btnAgregarMedicina";
-            this.btnAgregarMedicina.Size = new System.Drawing.Size(344, 74);
+            this.btnAgregarMedicina.Size = new System.Drawing.Size(258, 60);
             this.btnAgregarMedicina.TabIndex = 8;
             this.btnAgregarMedicina.TabStop = false;
             this.btnAgregarMedicina.UseVisualStyleBackColor = false;
@@ -121,10 +121,9 @@
             this.btnModificarMedicina.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnModificarMedicina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarMedicina.ForeColor = System.Drawing.Color.Transparent;
-            this.btnModificarMedicina.Location = new System.Drawing.Point(605, 540);
-            this.btnModificarMedicina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarMedicina.Location = new System.Drawing.Point(454, 439);
             this.btnModificarMedicina.Name = "btnModificarMedicina";
-            this.btnModificarMedicina.Size = new System.Drawing.Size(344, 78);
+            this.btnModificarMedicina.Size = new System.Drawing.Size(258, 63);
             this.btnModificarMedicina.TabIndex = 9;
             this.btnModificarMedicina.TabStop = false;
             this.btnModificarMedicina.UseVisualStyleBackColor = false;
@@ -140,10 +139,9 @@
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.Location = new System.Drawing.Point(870, 463);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(652, 376);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 38);
+            this.btnBuscar.Size = new System.Drawing.Size(30, 31);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.TabStop = false;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -156,10 +154,10 @@
             this.cmbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(620, 236);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCategoria.Location = new System.Drawing.Point(465, 192);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(383, 28);
+            this.cmbCategoria.Size = new System.Drawing.Size(288, 25);
             this.cmbCategoria.TabIndex = 4;
             // 
             // cmbUnidadMedida
@@ -169,10 +167,10 @@
             this.cmbUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUnidadMedida.FormattingEnabled = true;
-            this.cmbUnidadMedida.Location = new System.Drawing.Point(620, 336);
-            this.cmbUnidadMedida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbUnidadMedida.Location = new System.Drawing.Point(465, 273);
+            this.cmbUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbUnidadMedida.Name = "cmbUnidadMedida";
-            this.cmbUnidadMedida.Size = new System.Drawing.Size(383, 28);
+            this.cmbUnidadMedida.Size = new System.Drawing.Size(288, 25);
             this.cmbUnidadMedida.TabIndex = 7;
             // 
             // cmbEstado
@@ -185,10 +183,10 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(107, 336);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbEstado.Location = new System.Drawing.Point(80, 273);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(383, 28);
+            this.cmbEstado.Size = new System.Drawing.Size(288, 25);
             this.cmbEstado.TabIndex = 6;
             // 
             // txtPrecioMedida
@@ -196,21 +194,21 @@
             this.txtPrecioMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtPrecioMedida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecioMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioMedida.Location = new System.Drawing.Point(648, 440);
-            this.txtPrecioMedida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrecioMedida.Location = new System.Drawing.Point(486, 358);
+            this.txtPrecioMedida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecioMedida.Name = "txtPrecioMedida";
-            this.txtPrecioMedida.Size = new System.Drawing.Size(328, 20);
+            this.txtPrecioMedida.Size = new System.Drawing.Size(246, 16);
             this.txtPrecioMedida.TabIndex = 10;
             this.txtPrecioMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrecioMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMedida_KeyPress);
             // 
             // fmAgregarMedicina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1108, 670);
+            this.ClientSize = new System.Drawing.Size(831, 544);
             this.Controls.Add(this.txtPrecioMedida);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.cmbUnidadMedida);
@@ -223,7 +221,6 @@
             this.Controls.Add(this.txtCantidadMedida);
             this.Controls.Add(this.txtNombreMedicina);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fmAgregarMedicina";
             this.Text = "fmAgregarMedicina";
             this.Load += new System.EventHandler(this.fmAgregarMedicina_Load);

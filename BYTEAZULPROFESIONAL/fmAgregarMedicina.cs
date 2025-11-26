@@ -43,19 +43,24 @@ namespace BYTEAZULPROFESIONAL
                         return;
                     }
                     
-                    var resultado = csMedicinas.AgregarMedicina(txtNombreMedicina.Text.Trim(), txtDescripcion.Text.Trim());
-                    idProducto = csMedicinas.ObtenerUltimoProductoId();
+                    (bool resultado, string mensaje) = csMedicinas.AgregarMedicina(txtNombreMedicina.Text.Trim(), txtDescripcion.Text.Trim());
 
-                    var aggPrecio = csPrecios.AgregarPrecioMedicina(idProducto, Convert.ToDouble(txtPrecio.Text.Trim()));
+                    if (resultado)
+                    {
+                        idProducto = csMedicinas.ObtenerUltimoProductoId();
+                        resultado = csPrecios.AgregarPrecioMedicina(idProducto, Convert.ToDouble(txtPrecio.Text.Trim()));
+                        if (resultado)
+                        {
+                            (resultado, mensaje) = csCategorias.AgregarCategoriaProducto(idProducto, cmbCategoria.Text.Trim());
 
-                    var catAgregada = csCategorias.AgregarCategoriaProducto(idProducto, cmbCategoria.Text.Trim());
+                            // UNIDADES DE MEDIDA
+                            int IdUnidadMedida = csUnidadMedida.ObtenerIdUnidadMedidaId(cmbUnidadMedida.Text.Trim());
 
-                    // UNIDADES DE MEDIDA
-                    int IdUnidadMedida = csUnidadMedida.ObtenerIdUnidadMedidaId(cmbUnidadMedida.Text.Trim());
+                            var UnidadMedidaAgregada = csUnidadMedida.AgregarUnidadMedidaProducto(idProducto, IdUnidadMedida, Convert.ToDouble(txtPrecioMedida.Text.Trim()));
+                        }                       
+                    }                   
 
-                    var UnidadMedidaAgregada = csUnidadMedida.AgregarUnidadMedidaProducto(idProducto, IdUnidadMedida, Convert.ToDouble(txtPrecioMedida.Text.Trim()));
-
-                    MessageBox.Show("Medicina agregada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(mensaje, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                     this.Close();
                 }
                 else
