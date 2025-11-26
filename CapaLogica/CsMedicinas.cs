@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,24 @@ namespace CapaLogica
             bdMedicina = new BdMedicinas();
             DataTable VerMedicinas = bdMedicina.BuscarMedicina(buscar);
             return VerMedicinas;
+        }
+        public decimal ObtenerIvaProducto(int idProducto)
+        {
+            bdMedicina = new BdMedicinas();
+            decimal iva = 0;
+            DataTable dt = bdMedicina.ObtenerDatosMaestros("SP_SL_ObtenerIvaProducto",
+                new List<SqlParameter> { new SqlParameter("@IdProducto", idProducto) });
+
+            if (dt.Rows.Count > 0 && dt.Rows[0]["ValorIva"] != DBNull.Value)
+            {
+                // OJO: Si en BD guardas "15" (por ciento), aquí dividimos para 100.
+                // Si en BD guardas "0.15", quitamos la división.
+                decimal valorBd = Convert.ToDecimal(dt.Rows[0]["ValorIva"]);
+
+                // Asumiré que guardas enteros como 12 o 15
+                iva = valorBd > 1 ? valorBd / 100 : valorBd;
+            }
+            return iva;
         }
     }
 }

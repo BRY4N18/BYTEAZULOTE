@@ -14,6 +14,17 @@ namespace BYTEAZULPROFESIONAL
     public partial class fmGestionarMedicina : Form
     {
         CsMedicinas csmedicina;
+        // --- BANDERITA DE MODO ---
+        // false = Solo ver/gestionar (Por defecto)
+        // true = Seleccionar para devolver datos
+        public bool ModoSeleccion = false;
+        public int IdRetorno { get; private set; }
+        public string NombreRetorno { get; private set; }
+        public decimal PrecioRetorno { get; private set; } // Útil para sugerir costo en compra
+        public int StockRetorno { get; private set; }
+        /// <summary>
+        /// //
+        /// </summary>
         public fmGestionarMedicina()
         {
             InitializeComponent();
@@ -21,26 +32,44 @@ namespace BYTEAZULPROFESIONAL
 
         private void dgvVerMedicina_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int fila = dgvVerMedicina.CurrentCell.RowIndex;
-            try
+            // 1. SI NO ESTOY EN MODO SELECCIÓN, ME SALGO (Protección contra clics accidentales)
+            if (ModoSeleccion == false) return;
+
+            if (e.RowIndex >= 0)
             {
-                if (dgvVerMedicina.Rows[fila].Cells["Estado"].Value.ToString().Trim() == "Activo")
+                try
                 {
-                    fmCaja caja = Owner as fmCaja;
-                    caja.txtIdProducto.Text = dgvVerMedicina.Rows[fila].Cells["Id"].Value.ToString();
-                    caja.txtNombreProducto.Text = dgvVerMedicina.Rows[fila].Cells["Medicina"].Value.ToString();
-                    caja.txtPrecio.Text = dgvVerMedicina.Rows[fila].Cells["Precio unitario"].Value.ToString();
-                    caja.stock = Convert.ToInt32(dgvVerMedicina.Rows[fila].Cells["Stock"].Value.ToString());
-                    caja.txtIdProducto.Enabled = false;
-                    caja.txtNombreProducto.Enabled = false;
-                    caja.txtPrecio.Enabled = false;
-                    this.Hide();
+                    // Validar estado (Activo/Inactivo)
+                    string estado = dgvVerMedicina.Rows[e.RowIndex].Cells["EstadoDesc"].Value.ToString();
+
+                    if (estado == "Activo" || estado == "True" || estado == "1")
+                    {
+                        // 2. LLENAMOS LA MOCHILA
+                        IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["IdProducto"].Value);
+                        NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Producto"].Value.ToString();
+
+                        // Validar nulos en Precio y Stock
+                        var valPrecio = dgvVerMedicina.Rows[e.RowIndex].Cells["CostoPromedio"].Value;
+                        PrecioRetorno = valPrecio != DBNull.Value ? Convert.ToDecimal(valPrecio) : 0;
+
+                        var valStock = dgvVerMedicina.Rows[e.RowIndex].Cells["StockActual"].Value;
+                        StockRetorno = valStock != DBNull.Value ? Convert.ToInt32(valStock) : 0;
+
+                        /////////
+
+                        // 3. RETORNAR OK
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Producto inactivo.");
+                    }
                 }
-                else MessageBox.Show("Este producto no se encuentra disponible");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al seleccionar el producto: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al seleccionar: " + ex.Message);
+                }
             }
         }
 
@@ -51,6 +80,12 @@ namespace BYTEAZULPROFESIONAL
         }
 
         private void fmGestionarMedicina_Load(object sender, EventArgs e)
+        {
+            csmedicina = new CsMedicinas();
+            dgvVerMedicina.DataSource = csmedicina.Buscar(txtBuscar.Text.Trim());
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             csmedicina = new CsMedicinas();
             dgvVerMedicina.DataSource = csmedicina.Buscar(txtBuscar.Text.Trim());

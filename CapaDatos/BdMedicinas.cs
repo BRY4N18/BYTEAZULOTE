@@ -95,5 +95,25 @@ namespace CapaDatos
             }
             return ultimoId;
         }
+        public DataTable ObtenerDatosMaestros(string nombreSP, List<SqlParameter> parametros)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(nombreSP, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        if (parametros != null) foreach (var p in parametros) cmd.Parameters.Add(p);
+                        new SqlDataAdapter(cmd).Fill(dt);
+                    }
+                }
+            }
+            catch { }
+            return dt;
+        }
     }
 }
