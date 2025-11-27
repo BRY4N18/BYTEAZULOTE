@@ -79,6 +79,12 @@
     <Compile Include="fmAbrirCaja.Designer.cs">
       <DependentUpon>fmAbrirCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmAgregarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmAgregarCategorias.Designer.cs">
+      <DependentUpon>fmAgregarCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmAgregarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     <Compile Include="fmCrearCuentas.Designer.cs">
       <DependentUpon>fmCrearCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmGestionarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmGestionarCategorias.Designer.cs">
+      <DependentUpon>fmGestionarCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmGestionarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +180,12 @@
     </Compile>
     <Compile Include="fmGestionarSuscripciones.Designer.cs">
       <DependentUpon>fmGestionarSuscripciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmIvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmIvas.Designer.cs">
+      <DependentUpon>fmIvas.cs</DependentUpon>
     </Compile>
     <Compile Include="fmLogin.cs">
       <SubType>Form</SubType>
@@ -216,6 +234,9 @@
     <EmbeddedResource Include="fmAbrirCaja.resx">
       <DependentUpon>fmAbrirCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmAgregarCategorias.resx">
+      <DependentUpon>fmAgregarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmAgregarClientes.resx">
       <DependentUpon>fmAgregarClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +264,9 @@
     <EmbeddedResource Include="fmCrearCuentas.resx">
       <DependentUpon>fmCrearCuentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmGestionarCategorias.resx">
+      <DependentUpon>fmGestionarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmGestionarClientes.resx">
       <DependentUpon>fmGestionarClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmGestionarSuscripciones.resx">
       <DependentUpon>fmGestionarSuscripciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmIvas.resx">
+      <DependentUpon>fmIvas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmLogin.resx">
       <DependentUpon>fmLogin.cs</DependentUpon>

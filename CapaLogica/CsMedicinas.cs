@@ -88,5 +88,15 @@ namespace CapaLogica
             }
             return iva;
         }
+        public (bool, string) AgregarCategoria(string categoria, int idiva, string descripcion)
+        {
+            bdMedicina = new BdMedicinas();
+            return bdMedicina.AgregarCategoria(categoria.Trim(), descripcion.Trim(), idiva);
+        }
+        public DataTable ListarIvas()
+        {
+            bdMedicina = new BdMedicinas();
+            return bdMedicina.ListarIva();
+        }
     }
 }

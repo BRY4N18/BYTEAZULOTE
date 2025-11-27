@@ -115,5 +115,61 @@ namespace CapaDatos
             catch { }
             return dt;
         }
+        public (bool, string) AgregarCategoria(string categoria, string descripcion, int idiva)
+        {
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_IN_AGREGAR_CATEGORIA", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@Categoria", categoria);
+                        cmd.Parameters.AddWithValue("@IdIVA", idiva);
+                        cmd.Parameters.AddWithValue("@Descripcion", descripcion);
+
+                        SqlParameter resultado = new SqlParameter("@Resultados", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter mensaje = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(resultado);
+                        cmd.Parameters.Add(mensaje);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToBoolean(resultado.Value), mensaje.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, "Error agregar la categoria " + ex.Message);
+            }
+        }
+        public DataTable ListarIva()
+        {
+            DataTable dtHistorial = new DataTable();
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_LISTASIVAS", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dtHistorial);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el listado de ivas: " + ex.Message);
+            }
+            return dtHistorial;
+        }
     }
 }
