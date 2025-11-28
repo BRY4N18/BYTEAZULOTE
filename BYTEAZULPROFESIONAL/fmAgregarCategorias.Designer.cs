@@ -104,6 +104,7 @@
             this.btnModificarCategoria.Size = new System.Drawing.Size(258, 59);
             this.btnModificarCategoria.TabIndex = 121;
             this.btnModificarCategoria.UseVisualStyleBackColor = false;
+            this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
             // 
             // btnAgregarCategoria
             // 

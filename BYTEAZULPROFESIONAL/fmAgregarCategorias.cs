@@ -15,6 +15,8 @@ namespace BYTEAZULPROFESIONAL
     {
         CsMedicinas csmedicina;
         public int idiva = 0;
+        private char ingreso = 'I';
+        private int idcategoria = 0;
         public fmAgregarCategorias()
         {
             InitializeComponent();
@@ -29,12 +31,35 @@ namespace BYTEAZULPROFESIONAL
                     csmedicina = new CsMedicinas();
                     (bool resultado, string mensaje) = csmedicina.AgregarCategoria(txtNombreCategoria.Text.Trim(), idiva, txtDescripcion.Text.Trim());
                     MessageBox.Show(mensaje, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-                    txtNombreCategoria.Clear();
-                    txtIva.Clear();
-                    txtDescripcion.Clear();
-                    cmbEstado.SelectedIndex = 0;
+                    if (resultado)
+                    {
+                        txtNombreCategoria.Clear();
+                        txtIva.Clear();
+                        txtDescripcion.Clear();
+                        cmbEstado.SelectedIndex = 0;
+                    }
                 }
                 else MessageBox.Show("Llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ModificarCategoria()
+        {
+            try
+            {
+                ingreso = 'M';
+                if (txtNombreCategoria.Text.Trim().Length > 0 && txtIva.Text.Trim().Length > 0 && txtDescripcion.Text.Trim().Length > 0)
+                {
+                    csmedicina = new CsMedicinas();
+                    bool estado = cmbEstado.SelectedIndex == 0 ? true : false;
+                    (bool resultado, string mensaje) = csmedicina.ModificarCategoria(idcategoria, txtNombreCategoria.Text.Trim(), txtIva.Text.Trim(),idiva,estado);
+                    MessageBox.Show(mensaje, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    if (resultado) this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -52,6 +77,13 @@ namespace BYTEAZULPROFESIONAL
             cmbEstado.SelectedIndex = 0;
             txtIva.Enabled = false;
             cmbEstado.Enabled = false;
+            if(ingreso=='M')
+            {
+                btnModificarCategoria.Enabled = true;
+                btnAgregarCategoria.Enabled = false;
+                cmbEstado.Enabled = true;
+            }
+            else btnModificarCategoria.Enabled = false;
         }
 
         private void btnBuscarIva_Click(object sender, EventArgs e)
@@ -59,6 +91,11 @@ namespace BYTEAZULPROFESIONAL
             fmIvas fmiva = new fmIvas();
             this.AddOwnedForm(fmiva);
             fmiva.ShowDialog();
+        }
+
+        private void btnModificarCategoria_Click(object sender, EventArgs e)
+        {
+            ModificarCategoria();
         }
     }
 }

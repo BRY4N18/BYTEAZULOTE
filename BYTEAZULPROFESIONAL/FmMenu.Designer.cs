@@ -35,7 +35,7 @@
             this.btnGestionarSus = new System.Windows.Forms.Button();
             this.btnSuscripciones = new System.Windows.Forms.Button();
             this.panelSubAdministracion = new System.Windows.Forms.Panel();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.btnGestionarCategoria = new System.Windows.Forms.Button();
             this.btnTrnassacionescaja = new System.Windows.Forms.Button();
             this.btnMovimientosCaja = new System.Windows.Forms.Button();
             this.btnCrearCuentas = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.Pic_FondoMenu = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelsubSuscripciones.SuspendLayout();
             this.panelSubAdministracion.SuspendLayout();
@@ -125,7 +126,7 @@
             this.panelsubSuscripciones.Controls.Add(this.btnAgregarSus);
             this.panelsubSuscripciones.Controls.Add(this.btnGestionarSus);
             this.panelsubSuscripciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelsubSuscripciones.Location = new System.Drawing.Point(0, 1343);
+            this.panelsubSuscripciones.Location = new System.Drawing.Point(0, 1382);
             this.panelsubSuscripciones.Name = "panelsubSuscripciones";
             this.panelsubSuscripciones.Size = new System.Drawing.Size(233, 76);
             this.panelsubSuscripciones.TabIndex = 19;
@@ -168,7 +169,7 @@
             this.btnSuscripciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuscripciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuscripciones.ForeColor = System.Drawing.Color.White;
-            this.btnSuscripciones.Location = new System.Drawing.Point(0, 1298);
+            this.btnSuscripciones.Location = new System.Drawing.Point(0, 1337);
             this.btnSuscripciones.Name = "btnSuscripciones";
             this.btnSuscripciones.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSuscripciones.Size = new System.Drawing.Size(233, 45);
@@ -181,6 +182,7 @@
             // panelSubAdministracion
             // 
             this.panelSubAdministracion.Controls.Add(this.btnAgregarCategoria);
+            this.panelSubAdministracion.Controls.Add(this.btnGestionarCategoria);
             this.panelSubAdministracion.Controls.Add(this.btnTrnassacionescaja);
             this.panelSubAdministracion.Controls.Add(this.btnMovimientosCaja);
             this.panelSubAdministracion.Controls.Add(this.btnCrearCuentas);
@@ -190,24 +192,24 @@
             this.panelSubAdministracion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubAdministracion.Location = new System.Drawing.Point(0, 1019);
             this.panelSubAdministracion.Name = "panelSubAdministracion";
-            this.panelSubAdministracion.Size = new System.Drawing.Size(233, 279);
+            this.panelSubAdministracion.Size = new System.Drawing.Size(233, 318);
             this.panelSubAdministracion.TabIndex = 17;
             // 
-            // btnAgregarCategoria
+            // btnGestionarCategoria
             // 
-            this.btnAgregarCategoria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(0, 237);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(233, 36);
-            this.btnAgregarCategoria.TabIndex = 10;
-            this.btnAgregarCategoria.Text = "Agregar Categoria";
-            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            this.btnGestionarCategoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarCategoria.Location = new System.Drawing.Point(0, 237);
+            this.btnGestionarCategoria.Name = "btnGestionarCategoria";
+            this.btnGestionarCategoria.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnGestionarCategoria.Size = new System.Drawing.Size(233, 36);
+            this.btnGestionarCategoria.TabIndex = 10;
+            this.btnGestionarCategoria.Text = "Gestionar Categoria";
+            this.btnGestionarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarCategoria.UseVisualStyleBackColor = true;
+            this.btnGestionarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // btnTrnassacionescaja
             // 
@@ -772,6 +774,22 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(0, 273);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(233, 36);
+            this.btnAgregarCategoria.TabIndex = 11;
+            this.btnAgregarCategoria.Text = "Agregar Categoria";
+            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click_1);
+            // 
             // FmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -846,12 +864,13 @@
         public System.Windows.Forms.Button btnLotes;
         private System.Windows.Forms.PictureBox Pic_Logo;
         private System.Windows.Forms.PictureBox Pic_FondoMenu;
-        private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.Button btnGestionarCategoria;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnSuscripciones;
         private System.Windows.Forms.Panel panelsubSuscripciones;
         private System.Windows.Forms.Button btnGestionarSus;
         private System.Windows.Forms.Button btnAgregarSus;
+        private System.Windows.Forms.Button btnAgregarCategoria;
     }
 }

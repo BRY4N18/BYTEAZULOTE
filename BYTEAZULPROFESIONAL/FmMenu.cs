@@ -342,7 +342,8 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
-            
+            PanelContenedorForm(new fmGestionarCategorias());
+            ocultarMenu();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -365,6 +366,12 @@ namespace BYTEAZULPROFESIONAL
         private void btnAgregarSus_Click(object sender, EventArgs e)
         {
             PanelContenedorForm(new fmSuscripciones());
+            ocultarMenu();
+        }
+
+        private void btnAgregarCategoria_Click_1(object sender, EventArgs e)
+        {
+            PanelContenedorForm(new fmAgregarCategorias());
             ocultarMenu();
         }
     }

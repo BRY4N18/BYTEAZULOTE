@@ -98,5 +98,10 @@ namespace CapaLogica
             bdMedicina = new BdMedicinas();
             return bdMedicina.ListarIva();
         }
+        public (bool, string) ModificarCategoria(int idcategoria, string categoria = "", string descripcion = "", int idiva = 101, bool estado = true)
+        {
+            bdMedicina = new BdMedicinas();
+            return bdMedicina.ModificarCategoria(idcategoria, categoria, descripcion, idiva, estado);
+        }
     }
 }
