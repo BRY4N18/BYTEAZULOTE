@@ -171,10 +171,10 @@ namespace CapaDatos
             }
             return dtHistorial;
         }
-        public (bool, string) ModificarCategoria(int idcategoria,string categoria = "", string descripcion = "", int idiva = 101, bool estado = true)
+        public (bool, string) ModificarCategoria(int idcategoria,string categoria , string descripcion , int idiva, bool estado)
         {
-            try
-            {
+            //try
+            //{
                 BdConexion = new BdConexionSQL();
                 using (SqlConnection conn = BdConexion.ObtenerConexion())
                 {
@@ -184,9 +184,9 @@ namespace CapaDatos
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@IdCategoria", idcategoria);
-                        if (categoria != "") cmd.Parameters.AddWithValue("@Categoria", categoria);
-                        if (idiva != 101) cmd.Parameters.AddWithValue("@IdIVA", idiva);
-                        if (descripcion != "") cmd.Parameters.AddWithValue("@Descripcion", descripcion);
+                        cmd.Parameters.AddWithValue("@Categoria", categoria);
+                        cmd.Parameters.AddWithValue("@IdIva", idiva);
+                        cmd.Parameters.AddWithValue("@Descripcion", descripcion);
                         cmd.Parameters.AddWithValue("@Estado",estado);
 
                         SqlParameter resultado = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
@@ -200,11 +200,35 @@ namespace CapaDatos
                         return (Convert.ToBoolean(resultado.Value), mensaje.Value.ToString());
                     }
                 }
+            //}
+            //catch (Exception ex)
+            //{
+            //    return (false, "Error al modificar la categoria " + ex.Message);
+            //}
+        }
+        public DataTable ListarCategorias(string filtro = "")
+        {
+            DataTable dtCategorias = new DataTable();
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_ListarCategorias", conn))
+                    { 
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Filtro", filtro);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dtCategorias);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                return (false, "Error al modificar la categoria" + ex.Message);
+                throw new Exception("Error al obtener el listado de ivas: " + ex.Message);
             }
+            return dtCategorias;
         }
     }
 }

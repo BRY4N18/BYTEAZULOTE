@@ -167,13 +167,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbEstado;
         public System.Windows.Forms.TextBox txtIva;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtNombreCategoria;
         private System.Windows.Forms.Button btnModificarCategoria;
         private System.Windows.Forms.Button btnAgregarCategoria;
         private System.Windows.Forms.Button btnBuscarIva;
+        public System.Windows.Forms.ComboBox cmbEstado;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.TextBox txtNombreCategoria;
     }
 }

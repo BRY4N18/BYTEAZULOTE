@@ -47,7 +47,7 @@
             this.dgvListarIva.RowTemplate.Height = 24;
             this.dgvListarIva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListarIva.Size = new System.Drawing.Size(335, 390);
-            this.dgvListarIva.TabIndex = 16;
+            this.dgvListarIva.TabIndex = 1;
             this.dgvListarIva.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarIva_CellContentDoubleClick);
             // 
             // fmIvas
@@ -58,6 +58,7 @@
             this.Controls.Add(this.dgvListarIva);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmIvas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmIvas";
             this.Load += new System.EventHandler(this.fmIvas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarIva)).EndInit();

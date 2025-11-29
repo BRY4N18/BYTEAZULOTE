@@ -103,5 +103,11 @@ namespace CapaLogica
             bdMedicina = new BdMedicinas();
             return bdMedicina.ModificarCategoria(idcategoria, categoria, descripcion, idiva, estado);
         }
+        public DataTable ListarCategorias(string filtro = "")
+        {
+            bdMedicina = new BdMedicinas();
+            DataTable VerCategorias = bdMedicina.ListarCategorias(filtro);
+            return VerCategorias;
+        }
     }
 }

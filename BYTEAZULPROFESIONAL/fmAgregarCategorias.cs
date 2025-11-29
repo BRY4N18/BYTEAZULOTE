@@ -15,8 +15,8 @@ namespace BYTEAZULPROFESIONAL
     {
         CsMedicinas csmedicina;
         public int idiva = 0;
-        private char ingreso = 'I';
-        private int idcategoria = 0;
+        public char ingreso = 'I';
+        public int idcategoria = 0;
         public fmAgregarCategorias()
         {
             InitializeComponent();
@@ -51,12 +51,11 @@ namespace BYTEAZULPROFESIONAL
         {
             try
             {
-                ingreso = 'M';
                 if (txtNombreCategoria.Text.Trim().Length > 0 && txtIva.Text.Trim().Length > 0 && txtDescripcion.Text.Trim().Length > 0)
                 {
                     csmedicina = new CsMedicinas();
                     bool estado = cmbEstado.SelectedIndex == 0 ? true : false;
-                    (bool resultado, string mensaje) = csmedicina.ModificarCategoria(idcategoria, txtNombreCategoria.Text.Trim(), txtIva.Text.Trim(),idiva,estado);
+                    (bool resultado, string mensaje) = csmedicina.ModificarCategoria(idcategoria, txtNombreCategoria.Text.Trim(), txtDescripcion.Text.Trim(),idiva,estado);
                     MessageBox.Show(mensaje, resultado ? "Éxito" : "Error", MessageBoxButtons.OK, resultado ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                     if (resultado) this.Close();
                 }
