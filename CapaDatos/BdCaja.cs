@@ -126,8 +126,8 @@ namespace CapaDatos
 
         public (bool, string) GuardarDetallesVenta(int idVenta, int idproducto, int cantidadsolicitada, decimal preciounitario)
         {
-            //try
-            //{
+            try
+            {
                 using (SqlConnection conn = BdConexion.ObtenerConexion())
                 {
                     conn.Open();
@@ -150,11 +150,11 @@ namespace CapaDatos
                         return (Convert.ToBoolean(res.Value), msj.Value.ToString());
                     }
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    return (false, ex.Message);
-            //}
         }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+}
     }
 }

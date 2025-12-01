@@ -74,7 +74,7 @@ namespace BYTEAZULPROFESIONAL
                 int idempleado = int.Parse(txtidEmpleado.Text.ToString().Trim());
                 int idcliente = int.Parse(txtIdCliente.Text.ToString().Trim());
                 //decimal totalventa = decimal.Parse(txtTotal.Text.ToString().Replace(',', '.').Trim());
-                decimal totalventa = 30.0m;
+                decimal totalventa = 30;
 
                 (int idventa, bool resultado, string mensaje) = cscaja.GenerarVenta(idempleado, idcliente, totalventa);
                 if (resultado)
@@ -157,6 +157,8 @@ namespace BYTEAZULPROFESIONAL
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             fmGestionarMedicina Medicinas = new fmGestionarMedicina();
+            Medicinas.ModoSeleccion = true;
+            Medicinas.mcaja = 'M';
             this.AddOwnedForm(Medicinas);
             Medicinas.ShowDialog();
         }

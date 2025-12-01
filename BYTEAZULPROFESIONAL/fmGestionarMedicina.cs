@@ -22,6 +22,7 @@ namespace BYTEAZULPROFESIONAL
         public string NombreRetorno { get; private set; }
         public decimal PrecioRetorno { get; private set; } // Útil para sugerir costo en compra
         public int StockRetorno { get; private set; }
+        public char mcaja = 'N';
         /// <summary>
         /// //
         /// </summary>
@@ -39,31 +40,50 @@ namespace BYTEAZULPROFESIONAL
             {
                 try
                 {
-                    // Validar estado (Activo/Inactivo)
-                    string estado = dgvVerMedicina.Rows[e.RowIndex].Cells["EstadoDesc"].Value.ToString();
-
-                    if (estado == "Activo" || estado == "True" || estado == "1")
+                    if (mcaja == 'M')
                     {
-                        // 2. LLENAMOS LA MOCHILA
-                        IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["IdProducto"].Value);
-                        NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Producto"].Value.ToString();
-
-                        // Validar nulos en Precio y Stock
-                        var valPrecio = dgvVerMedicina.Rows[e.RowIndex].Cells["CostoPromedio"].Value;
-                        PrecioRetorno = valPrecio != DBNull.Value ? Convert.ToDecimal(valPrecio) : 0;
-
-                        var valStock = dgvVerMedicina.Rows[e.RowIndex].Cells["StockActual"].Value;
-                        StockRetorno = valStock != DBNull.Value ? Convert.ToInt32(valStock) : 0;
-
-                        /////////
-
-                        // 3. RETORNAR OK
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        int fila = dgvVerMedicina.CurrentCell.RowIndex;
+                        if (dgvVerMedicina.Rows[fila].Cells["EstadoDesc"].Value.ToString().Trim() == "Activo")
+                        {
+                            fmCaja caja = Owner as fmCaja;
+                            caja.txtIdProducto.Text = dgvVerMedicina.Rows[fila].Cells["Id"].Value.ToString();
+                            caja.txtNombreProducto.Text = dgvVerMedicina.Rows[fila].Cells["Medicina"].Value.ToString();
+                            //caja.txtPrecio.Text = dgvVerMedicina.Rows[fila].Cells["Precio unitario"].Value.ToString();
+                            caja.stock = Convert.ToInt32(dgvVerMedicina.Rows[fila].Cells["Stock"].Value.ToString());
+                            caja.txtIdProducto.Enabled = false;
+                            caja.txtNombreProducto.Enabled = false;
+                            caja.txtPrecio.Enabled = false;
+                            this.Hide();
+                        }
+                        else MessageBox.Show("Este producto no se encuentra disponible");
                     }
                     else
                     {
-                        MessageBox.Show("Producto inactivo.");
+                        // Validar estado (Activo/Inactivo)
+                        string estado = dgvVerMedicina.Rows[e.RowIndex].Cells["EstadoDesc"].Value.ToString();
+                        if (estado == "Activo" || estado == "True" || estado == "1")
+                        {
+                            // 2. LLENAMOS LA MOCHILA
+                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["IdProducto"].Value);
+                            NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Producto"].Value.ToString();
+
+                            // Validar nulos en Precio y Stock
+                            var valPrecio = dgvVerMedicina.Rows[e.RowIndex].Cells["CostoPromedio"].Value;
+                            PrecioRetorno = valPrecio != DBNull.Value ? Convert.ToDecimal(valPrecio) : 0;
+
+                            var valStock = dgvVerMedicina.Rows[e.RowIndex].Cells["StockActual"].Value;
+                            StockRetorno = valStock != DBNull.Value ? Convert.ToInt32(valStock) : 0;
+
+                            /////////
+
+                            // 3. RETORNAR OK
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Producto inactivo.");
+                        }
                     }
                 }
                 catch (Exception ex)
