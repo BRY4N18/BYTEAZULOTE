@@ -64,14 +64,14 @@ namespace BYTEAZULPROFESIONAL
                         if (estado == "Activo" || estado == "True" || estado == "1")
                         {
                             // 2. LLENAMOS LA MOCHILA
-                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["IdProducto"].Value);
-                            NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Producto"].Value.ToString();
+                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["Id"].Value);
+                            NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Medicina"].Value.ToString();
 
                             // Validar nulos en Precio y Stock
                             var valPrecio = dgvVerMedicina.Rows[e.RowIndex].Cells["CostoPromedio"].Value;
                             PrecioRetorno = valPrecio != DBNull.Value ? Convert.ToDecimal(valPrecio) : 0;
 
-                            var valStock = dgvVerMedicina.Rows[e.RowIndex].Cells["StockActual"].Value;
+                            var valStock = dgvVerMedicina.Rows[e.RowIndex].Cells["Stock"].Value;
                             StockRetorno = valStock != DBNull.Value ? Convert.ToInt32(valStock) : 0;
 
                             /////////
