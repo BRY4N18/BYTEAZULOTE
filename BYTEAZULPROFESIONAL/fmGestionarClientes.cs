@@ -13,6 +13,7 @@ namespace BYTEAZULPROFESIONAL
     public partial class fmGestionarClientes : Form
     {
         CsClientes logica = new CsClientes();
+        public bool ModoSeleccion = false;
         public fmGestionarClientes()
         {
             InitializeComponent();
@@ -22,13 +23,16 @@ namespace BYTEAZULPROFESIONAL
         {
             try
             {
-                int fila = dgvVerClientes.CurrentCell.RowIndex;
-                fmCaja caja = Owner as fmCaja;
-                caja.txtIdCliente.Text = dgvVerClientes.Rows[fila].Cells["colId"].Value.ToString();
-                caja.txtNombreCliente.Text = dgvVerClientes.Rows[fila].Cells["NombreCliente"].Value.ToString();
-                caja.txtNombreCliente.Enabled = false;
-                caja.txtIdCliente.Enabled = false;
-                this.Hide();
+                if (ModoSeleccion)
+                {
+                    int fila = dgvVerClientes.CurrentCell.RowIndex;
+                    fmCaja caja = Owner as fmCaja;
+                    caja.txtIdCliente.Text = dgvVerClientes.Rows[fila].Cells["colId"].Value.ToString();
+                    caja.txtNombreCliente.Text = dgvVerClientes.Rows[fila].Cells["NombreCliente"].Value.ToString();
+                    caja.txtNombreCliente.Enabled = false;
+                    caja.txtIdCliente.Enabled = false;
+                    this.Hide();
+                }
             }
             catch (Exception ex)
             {

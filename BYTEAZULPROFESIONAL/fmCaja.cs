@@ -149,6 +149,7 @@ namespace BYTEAZULPROFESIONAL
         private void btnCliente_Click(object sender, EventArgs e)
         {
             fmGestionarClientes Clientes = new fmGestionarClientes();
+            Clientes.ModoSeleccion = true;
             this.AddOwnedForm(Clientes);
             Clientes.ShowDialog();
             ApellidoCliente();

@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\AZUL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmgestionarmedicina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionarmedicina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmgestionarmedicina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionarmedicina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,27 +34,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "fmGestionarMedicina.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs",
-              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs",
-              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAAEYAAABpAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "fmCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwJcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T00:07:50.28Z",
+              "WhenOpened": "2025-12-09T21:49:43.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "fmGestionarMedicina.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs",
-              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs [Dise\u00F1o]",
-              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarMedicina.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "fmGestionarClientes.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T00:07:48.629Z",
+              "WhenOpened": "2025-12-09T21:49:02.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fmCaja.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmCaja.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T21:49:21.37Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fmGestionarClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T21:49:32.571Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
