@@ -43,12 +43,12 @@ namespace BYTEAZULPROFESIONAL
                     if (mcaja == 'M')
                     {
                         int fila = dgvVerMedicina.CurrentCell.RowIndex;
-                        if (dgvVerMedicina.Rows[fila].Cells["EstadoDesc"].Value.ToString().Trim() == "Activo")
+                        if (dgvVerMedicina.Rows[fila].Cells["Estado"].Value.ToString().Trim() == "Activo")
                         {
                             fmCaja caja = Owner as fmCaja;
-                            caja.txtIdProducto.Text = dgvVerMedicina.Rows[fila].Cells["Id"].Value.ToString();
+                            caja.txtIdProducto.Text = dgvVerMedicina.Rows[fila].Cells["IdProducto"].Value.ToString();
                             caja.txtNombreProducto.Text = dgvVerMedicina.Rows[fila].Cells["Medicina"].Value.ToString();
-                            //caja.txtPrecio.Text = dgvVerMedicina.Rows[fila].Cells["Precio unitario"].Value.ToString();
+                            caja.txtPrecio.Text = dgvVerMedicina.Rows[fila].Cells["Precio"].Value.ToString();
                             caja.stock = Convert.ToInt32(dgvVerMedicina.Rows[fila].Cells["Stock"].Value.ToString());
                             caja.txtIdProducto.Enabled = false;
                             caja.txtNombreProducto.Enabled = false;
@@ -60,11 +60,11 @@ namespace BYTEAZULPROFESIONAL
                     else
                     {
                         // Validar estado (Activo/Inactivo)
-                        string estado = dgvVerMedicina.Rows[e.RowIndex].Cells["EstadoDesc"].Value.ToString();
+                        string estado = dgvVerMedicina.Rows[e.RowIndex].Cells["Estado"].Value.ToString();
                         if (estado == "Activo" || estado == "True" || estado == "1")
                         {
                             // 2. LLENAMOS LA MOCHILA
-                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["Id"].Value);
+                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["IdProducto"].Value);
                             NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Medicina"].Value.ToString();
 
                             // Validar nulos en Precio y Stock
@@ -111,8 +111,9 @@ namespace BYTEAZULPROFESIONAL
 
             // Columna ID (Oculta)
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
+            colId.HeaderText = "IdProducto";
             colId.Name = "IdProducto";
-            colId.DataPropertyName = "IdProducto"; // Debe coincidir con SQL
+            colId.DataPropertyName = "IdProducto";
             colId.Visible = false;
             dgvVerMedicina.Columns.Add(colId);
 
@@ -161,6 +162,7 @@ namespace BYTEAZULPROFESIONAL
             // Columna Estado
             DataGridViewTextBoxColumn colEst = new DataGridViewTextBoxColumn();
             colEst.HeaderText = "EstadoDesc";
+            colEst.Name = "Estado";
             colEst.DataPropertyName = "EstadoDesc";
             colEst.Width = 150;
             dgvVerMedicina.Columns.Add(colEst);

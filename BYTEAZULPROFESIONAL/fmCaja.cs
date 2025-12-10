@@ -73,8 +73,7 @@ namespace BYTEAZULPROFESIONAL
                 cscaja = new CsCaja();
                 int idempleado = int.Parse(txtidEmpleado.Text.ToString().Trim());
                 int idcliente = int.Parse(txtIdCliente.Text.ToString().Trim());
-                //decimal totalventa = decimal.Parse(txtTotal.Text.ToString().Replace(',', '.').Trim());
-                decimal totalventa = 30;
+                decimal totalventa = decimal.Parse(txtTotal.Text.ToString().Replace(',', '.').Trim());
 
                 (int idventa, bool resultado, string mensaje) = cscaja.GenerarVenta(idempleado, idcliente, totalventa);
                 if (resultado)
@@ -118,7 +117,6 @@ namespace BYTEAZULPROFESIONAL
                     txtNombreProducto.Clear();
                     txtPrecio.Clear();
                     txtCantidad.Clear();
-                    txtPrecio.Text = "10";
                 }
             }
             catch (Exception ex)
@@ -143,7 +141,6 @@ namespace BYTEAZULPROFESIONAL
             txtTotal.Enabled = false;
             txtCambio.Enabled = false;
             txtNombreEmpleado.Enabled = false;
-            txtPrecio.Text = "10";
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
