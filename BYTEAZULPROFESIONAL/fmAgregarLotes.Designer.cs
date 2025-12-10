@@ -262,6 +262,7 @@
             this.dgvCompra.RowTemplate.Height = 24;
             this.dgvCompra.Size = new System.Drawing.Size(508, 244);
             this.dgvCompra.TabIndex = 103;
+            this.dgvCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellContentClick);
             // 
             // txtIVA
             // 

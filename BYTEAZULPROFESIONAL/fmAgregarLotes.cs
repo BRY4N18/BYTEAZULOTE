@@ -19,8 +19,6 @@ namespace BYTEAZULPROFESIONAL
         CsProveedores logicaProveedores = new CsProveedores();
         CsMedicinas logicaMedicina = new CsMedicinas();
 
-
-        // --- VARIABLES DE ESTADO ---
         private int _idProveedorActual = 0;
         private int _idProductoActual = 0;
         public int IdEmpleadoLogueado;
@@ -47,7 +45,7 @@ namespace BYTEAZULPROFESIONAL
             // Columnas ID (Ocultas)
             dtDetalle.Columns.Add("IdProducto", typeof(int));
             dtDetalle.Columns.Add("IdProductoUnidad", typeof(int));
-            dtDetalle.Columns.Add("TasaIva", typeof(decimal)); // Ej: 0.15
+            dtDetalle.Columns.Add("TasaIva", typeof(decimal)); 
 
             // Columnas Visibles
             dtDetalle.Columns.Add("Producto", typeof(string));
@@ -56,8 +54,8 @@ namespace BYTEAZULPROFESIONAL
             dtDetalle.Columns.Add("Vencimiento", typeof(DateTime));
             dtDetalle.Columns.Add("Cantidad", typeof(decimal));
             dtDetalle.Columns.Add("Precio", typeof(decimal));
-            dtDetalle.Columns.Add("MontoIva", typeof(decimal)); // $$ Impuesto
-            dtDetalle.Columns.Add("Subtotal", typeof(decimal)); // (Cant*Precio) + Iva? No, base imponible.
+            dtDetalle.Columns.Add("MontoIva", typeof(decimal)); 
+            dtDetalle.Columns.Add("Subtotal", typeof(decimal)); 
 
             dgvCompra.DataSource = dtDetalle;
 
@@ -73,6 +71,17 @@ namespace BYTEAZULPROFESIONAL
             dgvCompra.Columns["Vencimiento"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
             dgvCompra.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Columna botón ELIMINAR
+            DataGridViewButtonColumn colEliminar = new DataGridViewButtonColumn();
+            colEliminar.Name = "ColEliminar";
+            colEliminar.HeaderText = "Acción";
+            colEliminar.Text = "Quitar";
+            colEliminar.UseColumnTextForButtonValue = true;
+            colEliminar.Width = 70;
+            colEliminar.FlatStyle = FlatStyle.Popup;
+
+            dgvCompra.Columns.Add(colEliminar);
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -86,16 +95,12 @@ namespace BYTEAZULPROFESIONAL
             if (!decimal.TryParse(txtCantidad.Text, out cant) || cant <= 0) { MessageBox.Show("Cantidad inválida"); return; }
             if (!decimal.TryParse(txtPrecio.Text, out precio) || precio <= 0) { MessageBox.Show("Precio inválido"); return; }
 
-            // --- CÁLCULOS MATEMÁTICOS ---
             decimal baseImponible = cant * precio;
 
-            // Consultamos a la BD cuánto IVA paga este producto (0% o 15%)
             decimal porcentajeIva = logicaMedicina.ObtenerIvaProducto(_idProductoActual);
 
-            // Calculamos el dinero del impuesto
             decimal dineroIva = baseImponible * porcentajeIva;
 
-            // Agregamos la fila
             DataRow row = dtDetalle.NewRow();
             row["IdProducto"] = _idProductoActual;
             row["IdProductoUnidad"] = cmbPresentacion.SelectedValue;
@@ -105,21 +110,18 @@ namespace BYTEAZULPROFESIONAL
             row["Vencimiento"] = dtpFechaCaducidad.Value;
             row["Cantidad"] = cant;
             row["Precio"] = precio;
-            row["Subtotal"] = baseImponible; // Solo la base
+            row["Subtotal"] = baseImponible; 
             row["TasaIva"] = porcentajeIva;
-            row["MontoIva"] = dineroIva;     // Solo el impuesto
+            row["MontoIva"] = dineroIva;   
 
             dtDetalle.Rows.Add(row);
 
-            // Actualizamos los TextBoxes de abajo
             CalcularTotalesGlobales();
 
-            // Limpiamos campos para agregar otro rapido
             LimpiarCamposProducto();
         }
         private void CargarPresentaciones(int idProd)
         {
-            // Llama a tu lógica que trae "Caja x 20", "Unidad", etc.
             cmbPresentacion.DataSource = logicaCompra.TraerPresentaciones(idProd);
             cmbPresentacion.DisplayMember = "Descripcion";
             cmbPresentacion.ValueMember = "IdProductoUnidad";
@@ -144,8 +146,6 @@ namespace BYTEAZULPROFESIONAL
         private void btnBuscarIDProducto_Click(object sender, EventArgs e)
         {
             fmGestionarMedicina buscador = new fmGestionarMedicina();
-
-            // ¡IMPORTANTE! Activamos el modo selección
             buscador.ModoSeleccion = true;
 
             if (buscador.ShowDialog() == DialogResult.OK)
@@ -153,18 +153,13 @@ namespace BYTEAZULPROFESIONAL
                 _idProductoActual = buscador.IdRetorno;
                 txtNombreProducto.Text = buscador.NombreRetorno;
 
-                // Sugerimos el costo promedio actual (Opcional)
                 txtPrecio.Text = buscador.PrecioRetorno.ToString("N2");
 
-                // Cargamos las unidades (Caja, Unidad, etc.)
                 CargarPresentaciones(_idProductoActual);
 
-                // Consultamos el porcentaje (ej: 0.15)
                 decimal tasa = logicaMedicina.ObtenerIvaProducto(_idProductoActual);
 
-                // Lo mostramos en el txtIVA como porcentaje (ej: "15 %")
                 txtIVA.Text = (tasa * 100).ToString("0") + " %";
-
                 txtLote.Focus();
             }
         }
@@ -173,7 +168,6 @@ namespace BYTEAZULPROFESIONAL
         {
             fmGestionarProveedores buscador = new fmGestionarProveedores();
 
-            // ¡IMPORTANTE! Activamos el modo selección
             buscador.ModoSeleccion = true;
 
             if (buscador.ShowDialog() == DialogResult.OK)
@@ -201,14 +195,12 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnConfirmarCompra_Click(object sender, EventArgs e)
         {
-            // Validaciones finales
             if (_idProveedorActual == 0) { MessageBox.Show("Falta el proveedor."); return; }
             if (!txtNumFactura.MaskFull) { MessageBox.Show("Número de factura incompleto."); return; }
             if (dtDetalle.Rows.Count == 0) { MessageBox.Show("El carrito está vacío."); return; }
 
             try
             {
-                // Llamamos a la lógica para guardar TODO (Cabecera + Detalles)
                 var resultado = logicaCompra.GuardarCompraCompleta(
                     _idProveedorActual,
                     IdEmpleadoLogueado,
@@ -217,16 +209,36 @@ namespace BYTEAZULPROFESIONAL
                     dtDetalle
                 );
 
-                MessageBox.Show(resultado.Item2); // Mensaje del SP
+                MessageBox.Show(resultado.Item2); 
 
-                if (resultado.Item1) // Si es True (Éxito)
-                {
-                    this.Close(); // Cerramos el formulario
-                }
+                if (resultado.Item1) 
+                    this.Close(); 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error crítico: " + ex.Message);
+            }
+        }
+
+        private void dgvCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvCompra.Columns[e.ColumnIndex].Name == "ColEliminar")
+            {
+                var resp = MessageBox.Show("¿Deseas quitar este producto?",
+                                           "Confirmar",
+                                           MessageBoxButtons.YesNo,
+                                           MessageBoxIcon.Question);
+
+                if (resp == DialogResult.Yes)
+                {
+                    DataRowView drv = dgvCompra.Rows[e.RowIndex].DataBoundItem as DataRowView;
+                    if (drv != null)
+                        drv.Row.Delete();
+                    else
+                        dgvCompra.Rows.RemoveAt(e.RowIndex);
+
+                    CalcularTotalesGlobales();
+                }
             }
         }
     }

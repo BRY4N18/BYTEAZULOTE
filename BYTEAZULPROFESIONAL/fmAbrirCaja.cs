@@ -15,7 +15,6 @@ namespace BYTEAZULPROFESIONAL
     public partial class fmAbrirCaja : Form
     {
         CsCaja logicaCaja = new CsCaja();
-        // Variable para recibir el ID del empleado que va a abrir la caja
         public int IdEmpleadoRecibido;
 
         public fmAbrirCaja()
@@ -27,7 +26,6 @@ namespace BYTEAZULPROFESIONAL
 
         private void fmAbrirCaja_Load(object sender, EventArgs e)
         {
-            // Ponemos un valor por defecto y el foco para escribir rápido
             txtSueldoInicial.Text = "0.00";
             txtSueldoInicial.SelectAll();
             txtSueldoInicial.Focus();
@@ -37,22 +35,18 @@ namespace BYTEAZULPROFESIONAL
         {
             try
             {
-                // 1. Validar que el monto no esté vacío
                 if (string.IsNullOrWhiteSpace(txtSueldoInicial.Text))
                 {
                     MessageBox.Show("Por favor ingresa un monto inicial.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // 2. Intentar Abrir la Caja usando la Capa Lógica
-                // Nota: El método AbrirCaja valida internamente si es número
                 var respuesta = logicaCaja.AbrirCaja(IdEmpleadoRecibido, txtSueldoInicial.Text);
 
-                if (respuesta.Item1) // Item1 es el bool (True = Éxito)
+                if (respuesta.Item1) 
                 {
                     MessageBox.Show("¡Caja Abierta Correctamente!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Le dice al formulario padre (Menu) que todo salió bien
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -74,7 +68,6 @@ namespace BYTEAZULPROFESIONAL
                 e.Handled = true;
             }
 
-            // Solo permitir un punto decimal
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
