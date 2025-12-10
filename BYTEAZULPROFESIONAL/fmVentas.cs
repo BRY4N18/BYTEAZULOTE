@@ -23,7 +23,7 @@ namespace BYTEAZULPROFESIONAL
 
         CsCaja cscaja;
 
-        private void fmVentas_Load(object sender, EventArgs e)
+        private void ListarVentas()
         {
             try
             {
@@ -38,6 +38,26 @@ namespace BYTEAZULPROFESIONAL
             {
                 MessageBox.Show("Error inesperado: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void fmVentas_Load(object sender, EventArgs e)
+        {
+            ListarVentas();
+            DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
+            btnEditar.Name = "btnDetalles";
+            btnEditar.HeaderText = "Acciones";
+            btnEditar.Text = "Ver detalles";
+            btnEditar.UseColumnTextForButtonValue = true;
+            btnEditar.Width = 80;
+            btnEditar.FlatStyle = FlatStyle.Popup;
+            btnEditar.DefaultCellStyle.BackColor = Color.LightGray;
+
+            dgvVentas.Columns.Add(btnEditar);
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ListarVentas();
         }
     }
 }
