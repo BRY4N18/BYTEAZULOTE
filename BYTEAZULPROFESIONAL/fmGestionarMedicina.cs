@@ -46,7 +46,7 @@ namespace BYTEAZULPROFESIONAL
                         if (dgvVerMedicina.Rows[fila].Cells["Estado"].Value.ToString().Trim() == "Activo")
                         {
                             fmCaja caja = Owner as fmCaja;
-                            caja.txtIdProducto.Text = dgvVerMedicina.Rows[fila].Cells["IdProducto"].Value.ToString();
+                            caja.txtIdProducto.Text = dgvVerMedicina.Rows[fila].Cells["Id"].Value.ToString();
                             caja.txtNombreProducto.Text = dgvVerMedicina.Rows[fila].Cells["Medicina"].Value.ToString();
                             caja.txtPrecio.Text = dgvVerMedicina.Rows[fila].Cells["Precio"].Value.ToString();
                             caja.stock = Convert.ToInt32(dgvVerMedicina.Rows[fila].Cells["Stock"].Value.ToString());
@@ -64,7 +64,7 @@ namespace BYTEAZULPROFESIONAL
                         if (estado == "Activo" || estado == "True" || estado == "1")
                         {
                             // 2. LLENAMOS LA MOCHILA
-                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["IdProducto"].Value);
+                            IdRetorno = Convert.ToInt32(dgvVerMedicina.Rows[e.RowIndex].Cells["Id"].Value);
                             NombreRetorno = dgvVerMedicina.Rows[e.RowIndex].Cells["Medicina"].Value.ToString();
 
                             // Validar nulos en Precio y Stock
@@ -111,15 +111,16 @@ namespace BYTEAZULPROFESIONAL
 
             // Columna ID (Oculta)
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
-            colId.HeaderText = "IdProducto";
-            colId.Name = "IdProducto";
-            colId.DataPropertyName = "IdProducto";
+            colId.HeaderText = "Id";
+            colId.Name = "Id";
+            colId.DataPropertyName = "Id";
             colId.Visible = false;
             dgvVerMedicina.Columns.Add(colId);
 
             // Columna Producto
             DataGridViewTextBoxColumn colProducto = new DataGridViewTextBoxColumn();
             colProducto.HeaderText = "Medicina";
+            colProducto.Name = "Medicina";
             colProducto.DataPropertyName = "Medicina";
             colProducto.Width = 100;
             dgvVerMedicina.Columns.Add(colProducto);
@@ -141,6 +142,7 @@ namespace BYTEAZULPROFESIONAL
             // Columna Stock
             DataGridViewTextBoxColumn colStock = new DataGridViewTextBoxColumn();
             colStock.HeaderText = "Stock";
+            colStock.Name = "Stock";
             colStock.DataPropertyName = "Stock";
             colStock.Width = 90;
             dgvVerMedicina.Columns.Add(colStock);
@@ -148,6 +150,7 @@ namespace BYTEAZULPROFESIONAL
             // Columna CostoPromedio
             DataGridViewTextBoxColumn colCosProm = new DataGridViewTextBoxColumn();
             colCosProm.HeaderText = "CostoPromedio";
+            colCosProm.Name = "CostoPromedio";
             colCosProm.DataPropertyName = "CostoPromedio";
             colCosProm.Width = 90;
             dgvVerMedicina.Columns.Add(colCosProm);
@@ -155,6 +158,7 @@ namespace BYTEAZULPROFESIONAL
             // Columna Precio
             DataGridViewTextBoxColumn colPrecio = new DataGridViewTextBoxColumn();
             colPrecio.HeaderText = "Precio";
+            colPrecio.Name = "Precio";
             colPrecio.DataPropertyName = "Precio";
             colPrecio.Width = 90;
             dgvVerMedicina.Columns.Add(colPrecio);

@@ -289,7 +289,6 @@ C:\Users\ASUS\Desktop\BYTEAZULOTEVRF\BYTEAZULPROFESIONAL\bin\Debug\zh-Hans\Micro
 C:\Users\ASUS\Desktop\BYTEAZULOTEVRF\BYTEAZULPROFESIONAL\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\ASUS\Desktop\BYTEAZULOTEVRF\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZUL.BC016F72.Up2Date
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.csproj.AssemblyReference.cache
-C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.exe.config
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAbrirCaja.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAgregarCategorias.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAgregarClientes.resources
@@ -307,13 +306,11 @@ C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmG
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmGestionarLotes.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmGestionarMedicina.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmGestionarProveedores.resources
-C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmGestionarSuscripciones.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmIvas.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmLogin.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.FmMenu.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmMovimientos.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmReportesVentas.resources
-C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmSuscripciones.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmVentas.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmVerUsuarios.resources
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.Properties.Resources.resources
@@ -389,3 +386,6 @@ C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\bin\Debug\ru\Microsoft.SqlServer.
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZUL.BC016F72.Up2Date
+C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmGestionarDetallesVentas.resources
+C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.fmAgregarDescuentos.resources
+C:\Users\ASUS\Desktop\AZUL\BYTEAZULPROFESIONAL\obj\Debug\BYTEAZULPROFESIONAL.exe.config

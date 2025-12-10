@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\AZUL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmgestionardetallesventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionardetallesventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|c:\\users\\asus\\desktop\\azul\\byteazulprofesional\\fmgestionardetallesventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CDDBBCB2-2A70-4F97-B92E-0C222006D097}|BYTEAZULPROFESIONAL\\BYTEAZULPROFESIONAL.csproj|solutionrelative:byteazulprofesional\\fmgestionardetallesventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC0C5D7-133A-4E05-8D7D-90572493FABC}|CapaLogica\\CapaLogica.csproj|c:\\users\\asus\\desktop\\azul\\capalogica\\cscaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EC0C5D7-133A-4E05-8D7D-90572493FABC}|CapaLogica\\CapaLogica.csproj|solutionrelative:capalogica\\cscaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D49D43-B21A-4643-9B2E-FAC2F78B366C}|CapaDatos\\CapaDatos.csproj|c:\\users\\asus\\desktop\\azul\\capadatos\\bdcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99D49D43-B21A-4643-9B2E-FAC2F78B366C}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\bdcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,40 +34,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "fmVentas.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmVentas.cs",
-              "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmVentas.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmVentas.cs",
-              "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmVentas.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEcAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CsCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\CapaLogica\\CsCaja.cs",
+              "RelativeDocumentMoniker": "CapaLogica\\CsCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\CapaLogica\\CsCaja.cs",
+              "RelativeToolTip": "CapaLogica\\CsCaja.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwFAAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T05:35:59.767Z",
+              "WhenOpened": "2025-12-10T07:23:15.353Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "BdCaja.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\CapaDatos\\BdCaja.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\BdCaja.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\CapaDatos\\BdCaja.cs",
+              "RelativeToolTip": "CapaDatos\\BdCaja.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAANIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T07:21:14.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "fmGestionarDetallesVentas.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs",
               "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs",
               "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T05:35:33.702Z",
+              "WhenOpened": "2025-12-10T06:58:44.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "fmGestionarDetallesVentas.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs",
               "RelativeDocumentMoniker": "BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\AZUL\\BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs [Dise\u00F1o]",
               "RelativeToolTip": "BYTEAZULPROFESIONAL\\fmGestionarDetallesVentas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T05:30:50.113Z",
+              "WhenOpened": "2025-12-10T06:55:43.811Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

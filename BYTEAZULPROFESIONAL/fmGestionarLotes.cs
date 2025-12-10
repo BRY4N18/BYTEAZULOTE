@@ -166,11 +166,6 @@ namespace BYTEAZULPROFESIONAL
         {
             ConfigurarGridCompras();
             ConfigurarGridDetalles();
-
-
-            dgvCompras.CellClick += dgvCompras_CellClick;              
-            dgvCompras.CellDoubleClick += dgvCompras_CellDoubleClick;  
-            dgvCompras.CellContentClick += dgvCompras_CellContentClick; 
                                                                         
 
             CargarLista("");

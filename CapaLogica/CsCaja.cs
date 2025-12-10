@@ -67,5 +67,23 @@ namespace CapaLogica
         {
             return bdCaja.ListarVentas(filtro);
         }
+
+        public DataTable ListarDetallesVentas(string filtro)
+        {
+            return bdCaja.ListarDetallesVentas(filtro);
+        }
+
+        public (bool, string) DevolverDetalleVenta(int IdDetalleVenta)
+        {
+            try
+            {
+                bdCaja = new BdCaja();
+                return bdCaja.DevolverDetalleVenta(IdDetalleVenta);
+            }
+            catch (Exception)
+            {
+                return (false, "Error al realizar la devolucion del producto");
+            }
+        }
     }
 }

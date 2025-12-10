@@ -181,5 +181,59 @@ namespace CapaDatos
             }
             return dtCategorias;
         }
+        public DataTable ListarDetallesVentas(string filtro)
+        {
+            DataTable dtDetallesCategorias = new DataTable();
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_DETALLESVENTAS", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdVenta", filtro);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dtDetallesCategorias);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el listado de ventas: " + ex.Message);
+            }
+            return dtDetallesCategorias;
+        }
+
+        public (bool, string) DevolverDetalleVenta(int IdDetalleVenta)
+        {
+            try
+            {
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_UP_DevolverDetalleVenta", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdDetalleVenta", IdDetalleVenta);
+
+                        SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 50) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(res);
+                        cmd.Parameters.Add(msj);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToBoolean(res.Value), msj.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+        }
     }
 }

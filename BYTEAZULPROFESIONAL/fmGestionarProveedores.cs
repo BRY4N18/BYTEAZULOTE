@@ -51,6 +51,7 @@ namespace BYTEAZULPROFESIONAL
             // Columna Proveedor
             DataGridViewTextBoxColumn colProveedor = new DataGridViewTextBoxColumn();
             colProveedor.HeaderText = "Proveedor";
+            colProveedor.Name = "Proveedor";
             colProveedor.DataPropertyName = "Proveedor";
             colProveedor.Width = 100;
             dgvVerProveedores.Columns.Add(colProveedor);
@@ -87,6 +88,7 @@ namespace BYTEAZULPROFESIONAL
             // Columna Correo
             DataGridViewTextBoxColumn colEstado = new DataGridViewTextBoxColumn();
             colEstado.HeaderText = "Estado";
+            colEstado.Name = "Estado";
             colEstado.DataPropertyName = "Estado";
             colEstado.Width = 100;
             dgvVerProveedores.Columns.Add(colEstado);
@@ -139,7 +141,7 @@ namespace BYTEAZULPROFESIONAL
 
                     if (estado == "True" || estado == "Activo" || estado == "1")
                     {
-                        IdRetorno = Convert.ToInt32(dgvVerProveedores.Rows[e.RowIndex].Cells["IdProveedor"].Value);
+                        IdRetorno = Convert.ToInt32(dgvVerProveedores.Rows[e.RowIndex].Cells["colId"].Value);
                         NombreRetorno = dgvVerProveedores.Rows[e.RowIndex].Cells["Proveedor"].Value.ToString();
                         RucRetorno = dgvVerProveedores.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
 

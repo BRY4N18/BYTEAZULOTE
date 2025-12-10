@@ -64,7 +64,7 @@ namespace BYTEAZULPROFESIONAL
         {
             try
             {
-                if (dgvVentas.Columns[e.ColumnIndex].Name == "btnEditar" && e.RowIndex >= 0)
+                if (dgvVentas.Columns[e.ColumnIndex].Name == "btnDetalles" && e.RowIndex >= 0)
                 {
                     int fila = dgvVentas.CurrentCell.RowIndex;
                     fmGestionarDetallesVentas DetalleVenta = new fmGestionarDetallesVentas();
@@ -74,7 +74,7 @@ namespace BYTEAZULPROFESIONAL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al seleccionar la categoria: " + ex.Message);
+                MessageBox.Show("Error al seleccionar la venta: " + ex.Message);
             }
         }
     }

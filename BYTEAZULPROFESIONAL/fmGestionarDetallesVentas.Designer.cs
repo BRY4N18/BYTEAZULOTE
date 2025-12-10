@@ -32,6 +32,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvGestionarDetallesVentas = new System.Windows.Forms.DataGridView();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarDetallesVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +66,11 @@
             // 
             // dgvGestionarDetallesVentas
             // 
+            this.dgvGestionarDetallesVentas.AllowUserToAddRows = false;
+            this.dgvGestionarDetallesVentas.AllowUserToDeleteRows = false;
+            this.dgvGestionarDetallesVentas.AllowUserToResizeColumns = false;
+            this.dgvGestionarDetallesVentas.AllowUserToResizeRows = false;
+            this.dgvGestionarDetallesVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGestionarDetallesVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvGestionarDetallesVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGestionarDetallesVentas.Location = new System.Drawing.Point(31, 147);
@@ -73,20 +79,42 @@
             this.dgvGestionarDetallesVentas.RowHeadersWidth = 51;
             this.dgvGestionarDetallesVentas.Size = new System.Drawing.Size(778, 351);
             this.dgvGestionarDetallesVentas.TabIndex = 91;
+            this.dgvGestionarDetallesVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestionarDetallesVentas_CellContentClick);
             // 
-            // fmGestionarDescuentos
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
+            this.btnCerrar.Location = new System.Drawing.Point(801, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(29, 25);
+            this.btnCerrar.TabIndex = 123;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // fmGestionarDetallesVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(831, 544);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvGestionarDetallesVentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "fmGestionarDescuentos";
+            this.Name = "fmGestionarDetallesVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionar Suscripciones";
             this.Load += new System.EventHandler(this.fmGestionarDescuentos_Load);
@@ -101,5 +129,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvGestionarDetallesVentas;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
