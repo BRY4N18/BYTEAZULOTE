@@ -234,6 +234,13 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnGestionarLotes_Click(object sender, EventArgs e)
         {
+            fmGestionarLotes lotes = new fmGestionarLotes();
+            int idEmpleadoInt = 0;
+            if (string.IsNullOrEmpty(IdUsuario) || !int.TryParse(IdUsuario, out idEmpleadoInt))
+            {
+                idEmpleadoInt = 1; 
+            }
+            lotes.IdSupervisorLogueado = idEmpleadoInt;
             PanelContenedorForm(new fmGestionarLotes());
             ocultarMenu();
         }

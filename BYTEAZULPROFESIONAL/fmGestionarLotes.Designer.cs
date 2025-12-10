@@ -29,27 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmGestionarLotes));
-            this.dgvVerLotes = new System.Windows.Forms.DataGridView();
+            this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVerLotes)).BeginInit();
+            this.dgvDetalles = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvVerLotes
+            // dgvCompras
             // 
-            this.dgvVerLotes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
-            this.dgvVerLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVerLotes.Location = new System.Drawing.Point(34, 147);
-            this.dgvVerLotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvVerLotes.MultiSelect = false;
-            this.dgvVerLotes.Name = "dgvVerLotes";
-            this.dgvVerLotes.ReadOnly = true;
-            this.dgvVerLotes.RowHeadersVisible = false;
-            this.dgvVerLotes.RowHeadersWidth = 51;
-            this.dgvVerLotes.RowTemplate.Height = 24;
-            this.dgvVerLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVerLotes.Size = new System.Drawing.Size(778, 358);
-            this.dgvVerLotes.TabIndex = 0;
+            this.dgvCompras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
+            this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompras.Location = new System.Drawing.Point(34, 135);
+            this.dgvCompras.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCompras.MultiSelect = false;
+            this.dgvCompras.Name = "dgvCompras";
+            this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersVisible = false;
+            this.dgvCompras.RowHeadersWidth = 51;
+            this.dgvCompras.RowTemplate.Height = 24;
+            this.dgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCompras.Size = new System.Drawing.Size(778, 192);
+            this.dgvCompras.TabIndex = 0;
+            this.dgvCompras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellClick);
+            this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellContentClick);
+            this.dgvCompras.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellDoubleClick);
+            this.dgvCompras.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCompras_CellFormatting);
             // 
             // btnBuscar
             // 
@@ -70,14 +76,31 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(214)))), ((int)(((byte)(216)))));
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Location = new System.Drawing.Point(213, 78);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(386, 13);
             this.txtBuscar.TabIndex = 89;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // dgvDetalles
+            // 
+            this.dgvDetalles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
+            this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalles.Location = new System.Drawing.Point(33, 382);
+            this.dgvDetalles.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDetalles.MultiSelect = false;
+            this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.ReadOnly = true;
+            this.dgvDetalles.RowHeadersVisible = false;
+            this.dgvDetalles.RowHeadersWidth = 51;
+            this.dgvDetalles.RowTemplate.Height = 24;
+            this.dgvDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetalles.Size = new System.Drawing.Size(778, 137);
+            this.dgvDetalles.TabIndex = 90;
             // 
             // fmGestionarLotes
             // 
@@ -86,14 +109,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(831, 544);
+            this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgvVerLotes);
+            this.Controls.Add(this.dgvCompras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmGestionarLotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmGestionarLotes";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVerLotes)).EndInit();
+            this.Load += new System.EventHandler(this.fmGestionarLotes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,8 +127,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvVerLotes;
+        private System.Windows.Forms.DataGridView dgvCompras;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.DataGridView dgvDetalles;
     }
 }

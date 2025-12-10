@@ -61,15 +61,11 @@ namespace CapaLogica
                     return (false, "La cabecera se creó, pero algunos productos fallaron al guardarse. Revise los datos.");
                 }
 
-                // PASO 3: APROBAR COMPRA (Para que el Trigger mueva el Stock en TbProductos)
-                // Al cambiar el estado a 'C', el Trigger de SQL suma las cantidades al inventario
-                bd.AprobarCompra(idCompraGenerado);
-
                 // PASO 4: REGISTRAR EGRESO DE CAJA (Restar el dinero)
                 // Intentamos descontar el total de la caja del empleado logueado
                 bool egresoExito = bd.RegistrarEgresoCaja(idEmp, total, idCompraGenerado);
 
-                string msjFinal = "Compra registrada exitosamente. Stock actualizado.";
+                string msjFinal = "Compra registrada exitosamente.";
 
                 if (!egresoExito)
                 {
@@ -84,6 +80,22 @@ namespace CapaLogica
                 // Si falló la cabecera (ej: Factura duplicada)
                 return (false, "Error al crear la compra: " + mensajeCabecera);
             }
+        }
+
+        public DataTable ListarCompras(string estado)
+        {
+            return bd.ListarCompras(estado);
+        }
+
+        public DataTable VerDetalleCompra(int idCompra)
+        {
+            return bd.VerDetalleCompra(idCompra);
+        }
+
+        // 2. APROBAR (SUPERVISOR): Mueve Stock y Dinero
+        public (bool, string) AprobarCompra(int idCompra, int idSupervisor, decimal monto)
+        {
+            return bd.ConfirmarCompra(idCompra, idSupervisor, monto);
         }
     }
 }

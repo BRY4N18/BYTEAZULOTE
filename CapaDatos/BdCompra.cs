@@ -94,17 +94,6 @@ namespace CapaDatos
             }
             catch (Exception ex) { return (false, ex.Message); }
         }
-        // Agrega esto dentro de la clase BdCompras
-        public System.Data.DataTable ListarPresentaciones(int idProducto)
-        {
-            // Usamos una lista de parámetros para enviar el ID
-            var listaParametros = new System.Collections.Generic.List<System.Data.SqlClient.SqlParameter>();
-
-            listaParametros.Add(new System.Data.SqlClient.SqlParameter("@IdProducto", idProducto));
-
-            // Reutilizamos tu método genérico (que está en util/BdEmpleados)
-            return util.ObtenerDatosMaestros("SP_SL_ListarUnidadesPorProducto", listaParametros);
-        }
    
         public bool RegistrarEgresoCaja(int idEmpleado, decimal monto, int idCompraRef)
         {
@@ -136,6 +125,66 @@ namespace CapaDatos
             {
                 return false; // Si falla (ej: caja cerrada), no detiene la compra, solo no descuenta
             }
+        }
+
+        public DataTable ListarCompras(string textoBusqueda)
+        {
+            var lista = new List<SqlParameter>();
+
+            // TRUCO: Si es null o vacío, mandamos DBNull explícito
+            object valor = string.IsNullOrEmpty(textoBusqueda) ? (object)DBNull.Value : textoBusqueda;
+
+            lista.Add(new SqlParameter("@Busqueda", valor));
+
+            // IMPORTANTE: Asegúrate de que el nombre del SP sea el correcto ("SP_SL_ListarCompras")
+            // y no el antiguo que usaba filtro de estado.
+            return util.ObtenerDatosMaestros("SP_SL_ListarCompras", lista);
+        }
+
+
+        public DataTable VerDetalleCompra(int idCompra)
+        {
+            var lista = new List<SqlParameter> { new SqlParameter("@IdCompra", idCompra) };
+            return util.ObtenerDatosMaestros("SP_SL_VerDetalleCompra", lista);
+        }
+
+
+        public (bool, string) ConfirmarCompra(int idCompra, int idSupervisor, decimal monto)
+        {
+            try
+            {
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_UP_ConfirmarCompra", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdCompra", idCompra);
+                        cmd.Parameters.AddWithValue("@IdEmpleadoSupervisor", idSupervisor);
+                        cmd.Parameters.AddWithValue("@MontoTotal", monto);
+
+                        SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
+
+                        cmd.Parameters.Add(res);
+                        cmd.Parameters.Add(msj);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToBoolean(res.Value), msj.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, "Error BD: " + ex.Message);
+            }
+        }
+
+        public DataTable ListarPresentaciones(int idProducto)
+        {
+            var lista = new List<SqlParameter> { new SqlParameter("@IdProducto", idProducto) };
+            return util.ObtenerDatosMaestros("SP_SL_ListarUnidadesPorProducto", lista);
         }
     }
 }
