@@ -47,6 +47,7 @@
     <Compile Include="CsCompras.cs" />
     <Compile Include="CsEmpleados.cs" />
     <Compile Include="CsMedicinas.cs" />
+    <Compile Include="CsMovimientos.cs" />
     <Compile Include="CsPrecios.cs" />
     <Compile Include="CsProveedores.cs" />
     <Compile Include="CsUnidadMedida.cs" />

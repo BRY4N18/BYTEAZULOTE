@@ -48,6 +48,7 @@
     <Compile Include="BdConexionSQL.cs" />
     <Compile Include="BdEmpleados.cs" />
     <Compile Include="BdMedicinas.cs" />
+    <Compile Include="BdMovimientos.cs" />
     <Compile Include="BdPrecios.cs" />
     <Compile Include="BdProveedores.cs" />
     <Compile Include="BdUnidadMedida.cs" />

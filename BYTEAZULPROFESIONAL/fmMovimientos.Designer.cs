@@ -41,10 +41,15 @@
             // 
             // dgvMovimientos
             // 
+            this.dgvMovimientos.AllowUserToAddRows = false;
+            this.dgvMovimientos.AllowUserToDeleteRows = false;
+            this.dgvMovimientos.AllowUserToResizeColumns = false;
+            this.dgvMovimientos.AllowUserToResizeRows = false;
+            this.dgvMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMovimientos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovimientos.Location = new System.Drawing.Point(36, 148);
-            this.dgvMovimientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMovimientos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMovimientos.MultiSelect = false;
             this.dgvMovimientos.Name = "dgvMovimientos";
             this.dgvMovimientos.ReadOnly = true;
@@ -61,11 +66,12 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(216, 76);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(386, 16);
             this.txtBuscar.TabIndex = 17;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnBuscar
             // 
@@ -89,7 +95,7 @@
             this.imgTransaccionesCja.BackColor = System.Drawing.Color.Transparent;
             this.imgTransaccionesCja.Image = ((System.Drawing.Image)(resources.GetObject("imgTransaccionesCja.Image")));
             this.imgTransaccionesCja.Location = new System.Drawing.Point(308, 2);
-            this.imgTransaccionesCja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgTransaccionesCja.Margin = new System.Windows.Forms.Padding(2);
             this.imgTransaccionesCja.Name = "imgTransaccionesCja";
             this.imgTransaccionesCja.Size = new System.Drawing.Size(225, 41);
             this.imgTransaccionesCja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +108,7 @@
             this.imgMovimientosCaja.BackColor = System.Drawing.Color.Transparent;
             this.imgMovimientosCaja.Image = ((System.Drawing.Image)(resources.GetObject("imgMovimientosCaja.Image")));
             this.imgMovimientosCaja.Location = new System.Drawing.Point(308, 2);
-            this.imgMovimientosCaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgMovimientosCaja.Margin = new System.Windows.Forms.Padding(2);
             this.imgMovimientosCaja.Name = "imgMovimientosCaja";
             this.imgMovimientosCaja.Size = new System.Drawing.Size(225, 35);
             this.imgMovimientosCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,6 +131,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmMovimientos";
             this.Text = "fmMovimientos";
+            this.Load += new System.EventHandler(this.fmMovimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTransaccionesCja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMovimientosCaja)).EndInit();
