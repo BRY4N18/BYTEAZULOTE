@@ -71,6 +71,7 @@
             this.dgvVerEmpleados.Size = new System.Drawing.Size(770, 346);
             this.dgvVerEmpleados.TabIndex = 87;
             this.dgvVerEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerEmpleados_CellContentClick);
+            this.dgvVerEmpleados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvVerEmpleados_CellFormatting);
             // 
             // txtBuscar
             // 
