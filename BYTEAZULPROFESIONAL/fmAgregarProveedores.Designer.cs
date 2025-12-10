@@ -49,11 +49,11 @@
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(100, 108);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(75, 88);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(380, 20);
+            this.txtNombre.Size = new System.Drawing.Size(285, 16);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -62,11 +62,11 @@
             this.txtCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelular.Location = new System.Drawing.Point(102, 209);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCelular.Location = new System.Drawing.Point(76, 170);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCelular.MaxLength = 10;
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(380, 20);
+            this.txtCelular.Size = new System.Drawing.Size(285, 16);
             this.txtCelular.TabIndex = 2;
             this.txtCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
@@ -76,10 +76,10 @@
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(632, 212);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDireccion.Location = new System.Drawing.Point(474, 172);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(381, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(286, 16);
             this.txtDireccion.TabIndex = 4;
             this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -88,11 +88,11 @@
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(634, 108);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Location = new System.Drawing.Point(476, 88);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(379, 20);
+            this.txtEmail.Size = new System.Drawing.Size(284, 16);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -106,10 +106,9 @@
             this.btnAgregarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnAgregarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarProveedor.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregarProveedor.Location = new System.Drawing.Point(144, 565);
-            this.btnAgregarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(108, 459);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
-            this.btnAgregarProveedor.Size = new System.Drawing.Size(344, 74);
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(258, 60);
             this.btnAgregarProveedor.TabIndex = 37;
             this.btnAgregarProveedor.TabStop = false;
             this.btnAgregarProveedor.UseVisualStyleBackColor = false;
@@ -125,10 +124,9 @@
             this.btnModificarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnModificarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarProveedor.ForeColor = System.Drawing.Color.Transparent;
-            this.btnModificarProveedor.Location = new System.Drawing.Point(615, 562);
-            this.btnModificarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarProveedor.Location = new System.Drawing.Point(461, 457);
             this.btnModificarProveedor.Name = "btnModificarProveedor";
-            this.btnModificarProveedor.Size = new System.Drawing.Size(344, 74);
+            this.btnModificarProveedor.Size = new System.Drawing.Size(258, 60);
             this.btnModificarProveedor.TabIndex = 38;
             this.btnModificarProveedor.TabStop = false;
             this.btnModificarProveedor.UseVisualStyleBackColor = false;
@@ -144,10 +142,10 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(635, 293);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbEstado.Location = new System.Drawing.Point(476, 238);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(377, 28);
+            this.cmbEstado.Size = new System.Drawing.Size(284, 25);
             this.cmbEstado.TabIndex = 6;
             // 
             // cmbServicios
@@ -156,10 +154,10 @@
             this.cmbServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbServicios.FormattingEnabled = true;
-            this.cmbServicios.Location = new System.Drawing.Point(582, 631);
-            this.cmbServicios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbServicios.Location = new System.Drawing.Point(436, 513);
+            this.cmbServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbServicios.Name = "cmbServicios";
-            this.cmbServicios.Size = new System.Drawing.Size(377, 28);
+            this.cmbServicios.Size = new System.Drawing.Size(284, 25);
             this.cmbServicios.TabIndex = 39;
             this.cmbServicios.Visible = false;
             // 
@@ -168,11 +166,11 @@
             this.txtRUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRUC.Location = new System.Drawing.Point(101, 297);
-            this.txtRUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRUC.Location = new System.Drawing.Point(76, 241);
+            this.txtRUC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRUC.MaxLength = 13;
             this.txtRUC.Name = "txtRUC";
-            this.txtRUC.Size = new System.Drawing.Size(380, 20);
+            this.txtRUC.Size = new System.Drawing.Size(285, 16);
             this.txtRUC.TabIndex = 40;
             this.txtRUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRUC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUC_KeyPress);
@@ -186,15 +184,15 @@
             this.dgvServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicios.Location = new System.Drawing.Point(96, 372);
-            this.dgvServicios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvServicios.Location = new System.Drawing.Point(72, 302);
+            this.dgvServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvServicios.Name = "dgvServicios";
             this.dgvServicios.ReadOnly = true;
             this.dgvServicios.RowHeadersVisible = false;
             this.dgvServicios.RowHeadersWidth = 51;
             this.dgvServicios.RowTemplate.Height = 24;
             this.dgvServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServicios.Size = new System.Drawing.Size(420, 164);
+            this.dgvServicios.Size = new System.Drawing.Size(315, 133);
             this.dgvServicios.TabIndex = 43;
             // 
             // dgvProductos
@@ -206,24 +204,24 @@
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(615, 372);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvProductos.Location = new System.Drawing.Point(461, 302);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(420, 164);
+            this.dgvProductos.Size = new System.Drawing.Size(315, 133);
             this.dgvProductos.TabIndex = 44;
             // 
             // fmAgregarProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1108, 670);
+            this.ClientSize = new System.Drawing.Size(831, 544);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.dgvServicios);
             this.Controls.Add(this.txtRUC);
@@ -236,7 +234,6 @@
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fmAgregarProveedores";
             this.Text = "fmAgregarProveedores";
             this.Load += new System.EventHandler(this.fmAgregarProveedores_Load);

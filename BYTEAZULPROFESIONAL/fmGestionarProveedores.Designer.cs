@@ -58,11 +58,12 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(214)))), ((int)(((byte)(216)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Location = new System.Drawing.Point(205, 79);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(404, 13);
             this.txtBuscar.TabIndex = 40;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvVerProveedores
             // 
@@ -74,7 +75,7 @@
             this.dgvVerProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
             this.dgvVerProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVerProveedores.Location = new System.Drawing.Point(36, 148);
-            this.dgvVerProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVerProveedores.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVerProveedores.MultiSelect = false;
             this.dgvVerProveedores.Name = "dgvVerProveedores";
             this.dgvVerProveedores.ReadOnly = true;
