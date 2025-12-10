@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,11 +75,7 @@ namespace CapaLogica
                 return true;
             }
         }
-        //public DataTable ConsultaServicios() // Metodo para llenar el combobox de servicios del formulario AgregarProveedor
-        //{
-        //    DataTable Servicios = conexion.Leer("Select sp_nombre_servicio from Servicios_Proveedores");
-        //    return Servicios;
-        //}
+
         // SEGUNDA PARTE - GESTION DE PROVEEDORES - FM GESTIONAR PROVEEDORES
         public DataTable BuscarProveedores(string buscar)
         {
@@ -93,6 +90,18 @@ namespace CapaLogica
             bdProveedores = new BdProveedores();
             VerServicios = bdProveedores.ServiciosProveedores();
             return VerServicios;
+        }
+        public DataTable TraerDatosProveedor(int id)
+        {
+            bdProveedores = new BdProveedores();
+            var lista = new List<SqlParameter> { new SqlParameter("@IdProveedor", id) };
+            return bdProveedores.ObtenerDatosMaestros("SP_SL_ObtenerProveedorPorId", lista);
+        }
+        public (bool, string) EditarProveedor(int idProveedor, string nombre, string ruc, string celular, string direccion, string correo, int estado)
+        {
+            bdProveedores = new BdProveedores();
+            //Actualizar
+            return bdProveedores.ActualizarProveedor(idProveedor, nombre, ruc, celular, direccion, correo, estado);
         }
     }
 }

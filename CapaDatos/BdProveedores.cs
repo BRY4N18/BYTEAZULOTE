@@ -150,5 +150,56 @@ namespace CapaDatos
             }
             return dtVerServicios;
         }
+        public DataTable ObtenerDatosMaestros(string nombreSP, List<SqlParameter> parametros)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(nombreSP, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        if (parametros != null) foreach (var p in parametros) cmd.Parameters.Add(p);
+                        new SqlDataAdapter(cmd).Fill(dt);
+                    }
+                }
+            }
+            catch { }
+            return dt;
+        }
+        public (bool, string) ActualizarProveedor(int idProveedor, string nombre, string ruc, string celular, string direccion, string correo, int estado)
+        {
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_UP_TbProveedores", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+                        cmd.Parameters.AddWithValue("@Proveedor", nombre);
+                        cmd.Parameters.AddWithValue("@RUC", ruc);
+                        cmd.Parameters.AddWithValue("@Telefono", celular);
+                        cmd.Parameters.AddWithValue("@Direccion", direccion);
+                        cmd.Parameters.AddWithValue("@Correo", correo);
+                        cmd.Parameters.AddWithValue("@Estado", estado);
+
+                        SqlParameter res = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                        SqlParameter msj = new SqlParameter("@MensajeRetorno", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+                        cmd.Parameters.Add(res); cmd.Parameters.Add(msj);
+
+                        cmd.ExecuteNonQuery();
+                        return (Convert.ToBoolean(res.Value), msj.Value.ToString());
+                    }
+                }
+            }
+            catch (Exception ex) { return (false, ex.Message); }
+        }
+
     }
 }

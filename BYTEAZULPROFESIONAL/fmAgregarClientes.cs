@@ -70,11 +70,6 @@ namespace BYTEAZULPROFESIONAL
                     txtCelular.Text = row["Telefono"].ToString();
                     txtDireccion.Text = row["Direccion"].ToString();
                     txtEmail.Text = row["Correo"].ToString();
-
-                    if (row["FechaNacimiento"] != DBNull.Value)
-                        dtpFechaNacimiento.Value = Convert.ToDateTime(row["FechaNacimiento"]);
-
-                    cmbGenero.SelectedValue = Convert.ToInt32(row["IdGenero"]);
                 }
             }
             catch (Exception ex) { MessageBox.Show("Error al cargar datos: " + ex.Message); }

@@ -160,5 +160,22 @@ namespace BYTEAZULPROFESIONAL
         {
             CargarLista(txtBuscar.Text.Trim());
         }
+
+        private void dgvVerProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvVerProveedores.Columns[e.ColumnIndex].Name == "btnEditar" && e.RowIndex >= 0)
+            {
+                // Obtenemos el ID de la fila seleccionada
+                int idSeleccionado = Convert.ToInt32(dgvVerProveedores.Rows[e.RowIndex].Cells["colId"].Value);
+
+                // Abrimos el formulario en modo Editar
+                fmAgregarProveedores frm = new fmAgregarProveedores();
+                frm.IdProveedorEditar = idSeleccionado; // Pasamos el ID
+                frm.ShowDialog();
+
+                // Refrescamos la lista al volver
+                CargarLista(txtBuscar.Text.Trim());
+            }
+        }
     }
 }
