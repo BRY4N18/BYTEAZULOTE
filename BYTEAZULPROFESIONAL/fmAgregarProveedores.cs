@@ -13,14 +13,17 @@ using System.Windows.Forms;
 
 namespace BYTEAZULPROFESIONAL
 {
+   
     public partial class fmAgregarProveedores : Form
     {
+        public int IdProveedorEditar = 0;
         CsProveedores csProveedores;
         CsMedicinas csMedicinas;
         public fmAgregarProveedores()
         {
             InitializeComponent();
         }
+        
 
         private void fmAgregarProveedores_Load(object sender, EventArgs e)
         {
@@ -29,6 +32,26 @@ namespace BYTEAZULPROFESIONAL
             ConfigurarGridProductos();
             CargarListaProductos();
             cmbEstado.SelectedIndex = 0; // Activo por defecto
+            if (IdProveedorEditar > 0)
+            {
+                // MODO EDITAR
+                this.Text = "Modificar Proveedor";
+                btnAgregarProveedor.Enabled = false;
+                btnModificarProveedor.Enabled = true;
+                // Gestión de Estado
+                cmbEstado.Enabled = true;
+                btnModificarProveedor.Visible = true;
+                CargarDatosParaEditar();
+            }
+            else
+            {
+                // MODO NUEVO
+                this.Text = "Nuevo Proveedor";
+                btnAgregarProveedor.Enabled = true;
+                btnModificarProveedor.Enabled = false;
+                // Gestión de Estado
+                cmbEstado.Enabled = false;
+            }
         }
 
         private void ConfigurarGridServicios()
@@ -192,6 +215,28 @@ namespace BYTEAZULPROFESIONAL
                 MessageBox.Show("Error al agregar proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        //------------------MODIFICAR PROVEEDORES------------------//
+        private void CargarDatosParaEditar()
+        {
+            try
+            {
+                csProveedores = new CsProveedores();
+                DataTable dt = csProveedores.TraerDatosProveedor(IdProveedorEditar);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+                    txtNombre.Text = row["Proveedor"].ToString();
+                    txtRUC.Text = row["RUC"].ToString();
+                    txtCelular.Text = row["Telefono"].ToString();
+                    txtDireccion.Text = row["Direccion"].ToString();
+                    txtEmail.Text = row["Correo"].ToString();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Error al cargar datos: " + ex.Message); }
+        }
+
         private void txtRUC_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -206,6 +251,29 @@ namespace BYTEAZULPROFESIONAL
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnModificarProveedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                csProveedores = new CsProveedores();
+                int estado = 0;
+                if (cmbEstado.SelectedIndex == 0) estado = 1; // Activo
+                else estado = 0; // Inactivo
+                var res = csProveedores.EditarProveedor(
+                    IdProveedorEditar,
+                    txtNombre.Text.Trim(),
+                    txtRUC.Text.Trim(),
+                    txtCelular.Text.Trim(),
+                    txtDireccion.Text.Trim(),
+                    txtEmail.Text.Trim(),
+                    estado
+                );
+                MessageBox.Show(res.Item2, "Sistema", MessageBoxButtons.OK, res.Item1 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+                if (res.Item1) this.Close();
+            }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
     }
 }

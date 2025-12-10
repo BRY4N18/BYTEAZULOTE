@@ -85,6 +85,7 @@
             this.dgvVerProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVerProveedores.Size = new System.Drawing.Size(771, 347);
             this.dgvVerProveedores.TabIndex = 41;
+            this.dgvVerProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerProveedores_CellContentClick);
             this.dgvVerProveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerProveedores_CellContentDoubleClick);
             // 
             // fmGestionarProveedores
