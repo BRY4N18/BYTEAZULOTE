@@ -17,8 +17,6 @@ namespace BYTEAZULPROFESIONAL
     {
         CsProveedores csProveedores;
         CsMedicinas csMedicinas;
-        DataTable dtMedicinas;
-        DataTable dtServicios;
         public fmAgregarProveedores()
         {
             InitializeComponent();
@@ -26,26 +24,133 @@ namespace BYTEAZULPROFESIONAL
 
         private void fmAgregarProveedores_Load(object sender, EventArgs e)
         {
-            dgvProductos.DataSource = CargarProductos();
-            dgvServicios.DataSource = CargarServicios();
+            ConfigurarGridServicios();
+            CargarListaServicios();
+            ConfigurarGridProductos();
+            CargarListaProductos();
             cmbEstado.SelectedIndex = 0; // Activo por defecto
         }
-        private DataTable CargarProductos()
-        {
-            csMedicinas = new CsMedicinas();
-            dtMedicinas = new DataTable();
-            dtMedicinas = csMedicinas.Buscar("");
-            return dtMedicinas;
 
-        }
-        private DataTable CargarServicios()
+        private void ConfigurarGridServicios()
         {
-            csProveedores = new CsProveedores();
-            dtServicios = new DataTable();
-            dtServicios = csProveedores.ListarServicios();
-            return dtServicios;
+            dgvServicios.AutoGenerateColumns = false;
+            dgvServicios.Columns.Clear();
+
+            // Columna ID (Oculta)
+            DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
+            colId.Name = "IdServicio";
+            colId.DataPropertyName = "IdServicio"; // Debe coincidir con SQL
+            colId.Visible = false;
+            dgvServicios.Columns.Add(colId);
+
+            // Columna Servicio
+            DataGridViewTextBoxColumn colDoc = new DataGridViewTextBoxColumn();
+            colDoc.HeaderText = "Servicio";
+            colDoc.DataPropertyName = "Servicio";
+            colDoc.Width = 100;
+            dgvServicios.Columns.Add(colDoc);
+
+            // Columna Descripcion
+            DataGridViewTextBoxColumn colTel = new DataGridViewTextBoxColumn();
+            colTel.HeaderText = "Descripcion";
+            colTel.DataPropertyName = "Descripcion";
+            colTel.Width = 90;
+            dgvServicios.Columns.Add(colTel);
+
+            // Columna Estado
+            DataGridViewTextBoxColumn colDir = new DataGridViewTextBoxColumn();
+            colDir.HeaderText = "Estado";
+            colDir.DataPropertyName = "Estado";
+            colDir.Width = 150;
+            dgvServicios.Columns.Add(colDir);
         }
 
+        private void CargarListaServicios()
+        {
+            try
+            {
+                csProveedores = new CsProveedores();
+                dgvServicios.DataSource = csProveedores.ListarServicios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+        private void ConfigurarGridProductos()
+        {
+            dgvProductos.AutoGenerateColumns = false;
+            dgvProductos.Columns.Clear();
+
+            // Columna ID (Oculta)
+            DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
+            colId.Name = "IdProducto";
+            colId.DataPropertyName = "IdProducto"; // Debe coincidir con SQL
+            colId.Visible = false;
+            dgvProductos.Columns.Add(colId);
+
+            // Columna Producto
+            DataGridViewTextBoxColumn colProducto = new DataGridViewTextBoxColumn();
+            colProducto.HeaderText = "Medicina";
+            colProducto.DataPropertyName = "Medicina";
+            colProducto.Width = 100;
+            dgvProductos.Columns.Add(colProducto);
+
+            // Columna Descripcion
+            DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
+            colDesc.HeaderText = "Descripcion";
+            colDesc.DataPropertyName = "Descripcion";
+            colDesc.Width = 90;
+            dgvProductos.Columns.Add(colDesc);
+
+            // Columna Categoria
+            DataGridViewTextBoxColumn colCat = new DataGridViewTextBoxColumn();
+            colCat.HeaderText = "Categoria";
+            colCat.DataPropertyName = "Categoria";
+            colCat.Width = 90;
+            dgvProductos.Columns.Add(colCat);
+
+            // Columna Stock
+            DataGridViewTextBoxColumn colStock = new DataGridViewTextBoxColumn();
+            colStock.HeaderText = "Stock";
+            colStock.DataPropertyName = "Stock";
+            colStock.Width = 90;
+            dgvProductos.Columns.Add(colStock);
+
+            // Columna CostoPromedio
+            DataGridViewTextBoxColumn colCosProm = new DataGridViewTextBoxColumn();
+            colCosProm.HeaderText = "CostoPromedio";
+            colCosProm.DataPropertyName = "CostoPromedio";
+            colCosProm.Width = 90;
+            dgvProductos.Columns.Add(colCosProm);
+
+            // Columna Precio
+            DataGridViewTextBoxColumn colPrecio = new DataGridViewTextBoxColumn();
+            colPrecio.HeaderText = "Precio";
+            colPrecio.DataPropertyName = "Precio";
+            colPrecio.Width = 90;
+            dgvProductos.Columns.Add(colPrecio);
+
+            // Columna Estado
+            DataGridViewTextBoxColumn colEst = new DataGridViewTextBoxColumn();
+            colEst.HeaderText = "EstadoDesc";
+            colEst.DataPropertyName = "EstadoDesc";
+            colEst.Width = 150;
+            dgvProductos.Columns.Add(colEst);
+        }
+
+        private void CargarListaProductos()
+        {
+            try
+            {
+                csMedicinas = new CsMedicinas();
+                dgvProductos.DataSource = csMedicinas.Buscar("");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
             try
@@ -87,7 +192,6 @@ namespace BYTEAZULPROFESIONAL
                 MessageBox.Show("Error al agregar proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void txtRUC_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

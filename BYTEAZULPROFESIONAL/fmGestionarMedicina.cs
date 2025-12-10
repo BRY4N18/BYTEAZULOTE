@@ -101,8 +101,82 @@ namespace BYTEAZULPROFESIONAL
 
         private void fmGestionarMedicina_Load(object sender, EventArgs e)
         {
-            csmedicina = new CsMedicinas();
-            dgvVerMedicina.DataSource = csmedicina.Buscar(txtBuscar.Text.Trim());
+            ConfigurarGridProductos();
+            CargarListaProductos();
+        }
+        private void ConfigurarGridProductos()
+        {
+            dgvVerMedicina.AutoGenerateColumns = false;
+            dgvVerMedicina.Columns.Clear();
+
+            // Columna ID (Oculta)
+            DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
+            colId.Name = "IdProducto";
+            colId.DataPropertyName = "IdProducto"; // Debe coincidir con SQL
+            colId.Visible = false;
+            dgvVerMedicina.Columns.Add(colId);
+
+            // Columna Producto
+            DataGridViewTextBoxColumn colProducto = new DataGridViewTextBoxColumn();
+            colProducto.HeaderText = "Medicina";
+            colProducto.DataPropertyName = "Medicina";
+            colProducto.Width = 100;
+            dgvVerMedicina.Columns.Add(colProducto);
+
+            // Columna Descripcion
+            DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
+            colDesc.HeaderText = "Descripcion";
+            colDesc.DataPropertyName = "Descripcion";
+            colDesc.Width = 90;
+            dgvVerMedicina.Columns.Add(colDesc);
+
+            // Columna Categoria
+            DataGridViewTextBoxColumn colCat = new DataGridViewTextBoxColumn();
+            colCat.HeaderText = "Categoria";
+            colCat.DataPropertyName = "Categoria";
+            colCat.Width = 90;
+            dgvVerMedicina.Columns.Add(colCat);
+
+            // Columna Stock
+            DataGridViewTextBoxColumn colStock = new DataGridViewTextBoxColumn();
+            colStock.HeaderText = "Stock";
+            colStock.DataPropertyName = "Stock";
+            colStock.Width = 90;
+            dgvVerMedicina.Columns.Add(colStock);
+
+            // Columna CostoPromedio
+            DataGridViewTextBoxColumn colCosProm = new DataGridViewTextBoxColumn();
+            colCosProm.HeaderText = "CostoPromedio";
+            colCosProm.DataPropertyName = "CostoPromedio";
+            colCosProm.Width = 90;
+            dgvVerMedicina.Columns.Add(colCosProm);
+
+            // Columna Precio
+            DataGridViewTextBoxColumn colPrecio = new DataGridViewTextBoxColumn();
+            colPrecio.HeaderText = "Precio";
+            colPrecio.DataPropertyName = "Precio";
+            colPrecio.Width = 90;
+            dgvVerMedicina.Columns.Add(colPrecio);
+
+            // Columna Estado
+            DataGridViewTextBoxColumn colEst = new DataGridViewTextBoxColumn();
+            colEst.HeaderText = "EstadoDesc";
+            colEst.DataPropertyName = "EstadoDesc";
+            colEst.Width = 150;
+            dgvVerMedicina.Columns.Add(colEst);
+        }
+
+        private void CargarListaProductos()
+        {
+            try
+            {
+                csmedicina = new CsMedicinas();
+                dgvVerMedicina.DataSource = csmedicina.Buscar("");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
