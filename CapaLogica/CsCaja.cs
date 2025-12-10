@@ -62,5 +62,10 @@ namespace CapaLogica
             bdCaja = new BdCaja();
             return bdCaja.GuardarDetallesVenta(idventa, idproducto, cantidad, preciounitario);
         }
+
+        public DataTable ListarVentas(string filtro)
+        {
+            return bdCaja.ListarVentas(filtro);
+        }
     }
 }

@@ -156,5 +156,30 @@ namespace CapaDatos
                 return (false, ex.Message);
             }
 }
+
+        public DataTable ListarVentas(string filtro)
+        {
+            DataTable dtCategorias = new DataTable();
+            try
+            {
+                BdConexion = new BdConexionSQL();
+                using (SqlConnection conn = BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_ListarVentas", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Filtro", filtro);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dtCategorias);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el listado de ventas: " + ex.Message);
+            }
+            return dtCategorias;
+        }
     }
 }
