@@ -1,6 +1,6 @@
 ﻿namespace BYTEAZULPROFESIONAL
 {
-    partial class fmSuscripciones
+    partial class fmAgregarDescuentos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmSuscripciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmAgregarDescuentos));
             this.dtpFechaDeSuscripcion = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();

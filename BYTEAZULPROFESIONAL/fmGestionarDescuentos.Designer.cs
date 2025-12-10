@@ -1,6 +1,6 @@
 ﻿namespace BYTEAZULPROFESIONAL
 {
-    partial class fmGestionarSuscripciones
+    partial class fmGestionarDescuentos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmGestionarSuscripciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmGestionarDescuentos));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvGestionarSuscripciones = new System.Windows.Forms.DataGridView();

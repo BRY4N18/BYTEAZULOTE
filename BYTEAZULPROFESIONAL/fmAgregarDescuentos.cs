@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BYTEAZULPROFESIONAL
 {
-    public partial class fmSuscripciones : Form
+    public partial class fmAgregarDescuentos : Form
     {
-        public fmSuscripciones()
+        public fmAgregarDescuentos()
         {
             InitializeComponent();
         }

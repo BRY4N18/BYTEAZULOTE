@@ -359,13 +359,13 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnGestionarSus_Click(object sender, EventArgs e)
         {
-            PanelContenedorForm(new fmGestionarSuscripciones());
+            PanelContenedorForm(new fmGestionarDescuentos());
             ocultarMenu();
         }
 
         private void btnAgregarSus_Click(object sender, EventArgs e)
         {
-            PanelContenedorForm(new fmSuscripciones());
+            PanelContenedorForm(new fmAgregarDescuentos());
             ocultarMenu();
         }
 
