@@ -58,6 +58,12 @@ namespace BYTEAZULPROFESIONAL
                     cmbEmpresa.ValueMember = "IdEmpresa";
                     cmbEmpresa.SelectedIndex = -1; 
                 }
+                int index = cmbEmpresa.FindStringExact("Byte Azul S.A.");
+                if (index >= 0)
+                {
+                    cmbEmpresa.SelectedIndex = index;
+                }
+                cmbEmpresa.Enabled = false; 
             }
             catch (Exception ex)
             {

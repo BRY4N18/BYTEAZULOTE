@@ -78,10 +78,10 @@ namespace BYTEAZULPROFESIONAL
             dgvVerEmpleados.Columns.Add(colEmpresa);
 
             // 6. Columna Estado
-            DataGridViewCheckBoxColumn colEstado = new DataGridViewCheckBoxColumn();
-            colEstado.HeaderText = "Activo";
-            colEstado.DataPropertyName = "Estado"; // Coincide
-            colEstado.Width = 50;
+            DataGridViewTextBoxColumn colEstado = new DataGridViewTextBoxColumn();
+            colEstado.HeaderText = "Estado";
+            colEstado.DataPropertyName = "Estado"; 
+            colEstado.Width = 70;
             dgvVerEmpleados.Columns.Add(colEstado);
 
             // 7. Columna Botón Editar
@@ -124,6 +124,24 @@ namespace BYTEAZULPROFESIONAL
                 frm.ShowDialog();
 
                 CargarLista(txtBuscar.Text.Trim());
+            }
+        }
+
+        private void dgvVerEmpleados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvVerEmpleados.Columns[e.ColumnIndex].HeaderText == "Estado" && e.Value != null)
+            {
+                bool estado;
+                if (e.Value is bool)
+                {
+                    estado = (bool)e.Value;
+                }
+                else
+                {
+                    estado = e.Value.ToString() == "1" || e.Value.ToString().ToLower() == "true";
+                }
+                e.Value = estado ? "Activo" : "Inactivo";
+                e.FormattingApplied = true;
             }
         }
     }

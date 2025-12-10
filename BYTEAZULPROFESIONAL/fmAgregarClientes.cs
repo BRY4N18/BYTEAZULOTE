@@ -42,6 +42,7 @@ namespace BYTEAZULPROFESIONAL
                 btnModificarClientes.Enabled = false;
                 // Gestión de Estado
                 cmbEstado.Enabled = false;
+                cmbEstado.SelectedIndex = 0;
             }
         }
         private void CargarCombos()
