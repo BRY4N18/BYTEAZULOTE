@@ -59,5 +59,23 @@ namespace BYTEAZULPROFESIONAL
         {
             ListarVentas();
         }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvVentas.Columns[e.ColumnIndex].Name == "btnEditar" && e.RowIndex >= 0)
+                {
+                    int fila = dgvVentas.CurrentCell.RowIndex;
+                    fmGestionarDetallesVentas DetalleVenta = new fmGestionarDetallesVentas();
+                    DetalleVenta.idventa = int.Parse(dgvVentas.Rows[fila].Cells["IdVenta"].Value.ToString());
+                    DetalleVenta.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al seleccionar la categoria: " + ex.Message);
+            }
+        }
     }
 }

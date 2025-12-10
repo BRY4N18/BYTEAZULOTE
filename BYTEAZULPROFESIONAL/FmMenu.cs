@@ -359,7 +359,7 @@ namespace BYTEAZULPROFESIONAL
 
         private void btnGestionarSus_Click(object sender, EventArgs e)
         {
-            PanelContenedorForm(new fmGestionarDescuentos());
+            PanelContenedorForm(new fmGestionarDetallesVentas());
             ocultarMenu();
         }
 

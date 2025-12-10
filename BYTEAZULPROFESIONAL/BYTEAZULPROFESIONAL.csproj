@@ -175,11 +175,11 @@
     <Compile Include="fmGestionarProveedores.Designer.cs">
       <DependentUpon>fmGestionarProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmGestionarSuscripciones.cs">
+    <Compile Include="fmGestionarDetallesVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmGestionarSuscripciones.Designer.cs">
-      <DependentUpon>fmGestionarSuscripciones.cs</DependentUpon>
+    <Compile Include="fmGestionarDetallesVentas.Designer.cs">
+      <DependentUpon>fmGestionarDetallesVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="fmIvas.cs">
       <SubType>Form</SubType>
@@ -211,11 +211,11 @@
     <Compile Include="fmReportesVentas.Designer.cs">
       <DependentUpon>fmReportesVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmSuscripciones.cs">
+    <Compile Include="fmAgregarDescuentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmSuscripciones.Designer.cs">
-      <DependentUpon>fmSuscripciones.cs</DependentUpon>
+    <Compile Include="fmAgregarDescuentos.Designer.cs">
+      <DependentUpon>fmAgregarDescuentos.cs</DependentUpon>
     </Compile>
     <Compile Include="fmVentas.cs">
       <SubType>Form</SubType>
@@ -282,8 +282,8 @@
     <EmbeddedResource Include="fmGestionarProveedores.resx">
       <DependentUpon>fmGestionarProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fmGestionarSuscripciones.resx">
-      <DependentUpon>fmGestionarSuscripciones.cs</DependentUpon>
+    <EmbeddedResource Include="fmGestionarDetallesVentas.resx">
+      <DependentUpon>fmGestionarDetallesVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmIvas.resx">
       <DependentUpon>fmIvas.cs</DependentUpon>
@@ -300,8 +300,8 @@
     <EmbeddedResource Include="fmReportesVentas.resx">
       <DependentUpon>fmReportesVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fmSuscripciones.resx">
-      <DependentUpon>fmSuscripciones.cs</DependentUpon>
+    <EmbeddedResource Include="fmAgregarDescuentos.resx">
+      <DependentUpon>fmAgregarDescuentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmVentas.resx">
       <DependentUpon>fmVentas.cs</DependentUpon>

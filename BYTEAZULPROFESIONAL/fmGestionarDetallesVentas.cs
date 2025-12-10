@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace BYTEAZULPROFESIONAL
 {
-    public partial class fmGestionarDescuentos : Form
+    public partial class fmGestionarDetallesVentas : Form
     {
-        public fmGestionarDescuentos()
+        public int idventa = 0;
+        public fmGestionarDetallesVentas()
         {
             InitializeComponent();
+        }
+
+        private void fmGestionarDescuentos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

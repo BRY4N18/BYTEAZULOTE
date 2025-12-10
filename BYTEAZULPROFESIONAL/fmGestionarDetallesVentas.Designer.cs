@@ -1,6 +1,6 @@
 ﻿namespace BYTEAZULPROFESIONAL
 {
-    partial class fmGestionarDescuentos
+    partial class fmGestionarDetallesVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmGestionarDescuentos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmGestionarDetallesVentas));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvGestionarSuscripciones = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarSuscripciones)).BeginInit();
+            this.dgvGestionarDetallesVentas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarDetallesVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
             // 
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(214)))), ((int)(((byte)(216)))));
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Location = new System.Drawing.Point(221, 77);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(375, 13);
@@ -63,18 +63,18 @@
             this.btnBuscar.TabIndex = 92;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // dgvGestionarSuscripciones
+            // dgvGestionarDetallesVentas
             // 
-            this.dgvGestionarSuscripciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
-            this.dgvGestionarSuscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGestionarSuscripciones.Location = new System.Drawing.Point(31, 147);
-            this.dgvGestionarSuscripciones.Name = "dgvGestionarSuscripciones";
-            this.dgvGestionarSuscripciones.RowHeadersVisible = false;
-            this.dgvGestionarSuscripciones.RowHeadersWidth = 51;
-            this.dgvGestionarSuscripciones.Size = new System.Drawing.Size(778, 351);
-            this.dgvGestionarSuscripciones.TabIndex = 91;
+            this.dgvGestionarDetallesVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(81)))), ((int)(((byte)(159)))));
+            this.dgvGestionarDetallesVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGestionarDetallesVentas.Location = new System.Drawing.Point(31, 147);
+            this.dgvGestionarDetallesVentas.Name = "dgvGestionarDetallesVentas";
+            this.dgvGestionarDetallesVentas.RowHeadersVisible = false;
+            this.dgvGestionarDetallesVentas.RowHeadersWidth = 51;
+            this.dgvGestionarDetallesVentas.Size = new System.Drawing.Size(778, 351);
+            this.dgvGestionarDetallesVentas.TabIndex = 91;
             // 
-            // fmGestionarSuscripciones
+            // fmGestionarDescuentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,12 +83,14 @@
             this.ClientSize = new System.Drawing.Size(831, 544);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgvGestionarSuscripciones);
+            this.Controls.Add(this.dgvGestionarDetallesVentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "fmGestionarSuscripciones";
+            this.Name = "fmGestionarDescuentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionar Suscripciones";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarSuscripciones)).EndInit();
+            this.Load += new System.EventHandler(this.fmGestionarDescuentos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarDetallesVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,6 +100,6 @@
 
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvGestionarSuscripciones;
+        private System.Windows.Forms.DataGridView dgvGestionarDetallesVentas;
     }
 }
