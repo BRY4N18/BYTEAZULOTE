@@ -35,6 +35,7 @@
             this.btnGestionarSus = new System.Windows.Forms.Button();
             this.btnSuscripciones = new System.Windows.Forms.Button();
             this.panelSubAdministracion = new System.Windows.Forms.Panel();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.btnGestionarCategoria = new System.Windows.Forms.Button();
             this.btnTrnassacionescaja = new System.Windows.Forms.Button();
             this.btnMovimientosCaja = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.Pic_FondoMenu = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelsubSuscripciones.SuspendLayout();
             this.panelSubAdministracion.SuspendLayout();
@@ -177,6 +177,7 @@
             this.btnSuscripciones.Text = "Suscripciones";
             this.btnSuscripciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSuscripciones.UseVisualStyleBackColor = true;
+            this.btnSuscripciones.Visible = false;
             this.btnSuscripciones.Click += new System.EventHandler(this.btnSuscripciones_Click);
             // 
             // panelSubAdministracion
@@ -194,6 +195,22 @@
             this.panelSubAdministracion.Name = "panelSubAdministracion";
             this.panelSubAdministracion.Size = new System.Drawing.Size(233, 318);
             this.panelSubAdministracion.TabIndex = 17;
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(0, 273);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(233, 36);
+            this.btnAgregarCategoria.TabIndex = 11;
+            this.btnAgregarCategoria.Text = "Agregar Categoria";
+            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click_1);
             // 
             // btnGestionarCategoria
             // 
@@ -225,6 +242,7 @@
             this.btnTrnassacionescaja.Text = "Transaciones de Caja";
             this.btnTrnassacionescaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrnassacionescaja.UseVisualStyleBackColor = true;
+            this.btnTrnassacionescaja.Visible = false;
             this.btnTrnassacionescaja.Click += new System.EventHandler(this.btnTrnassacionescaja_Click);
             // 
             // btnMovimientosCaja
@@ -241,6 +259,7 @@
             this.btnMovimientosCaja.Text = "Movimientos de Caja";
             this.btnMovimientosCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMovimientosCaja.UseVisualStyleBackColor = true;
+            this.btnMovimientosCaja.Visible = false;
             this.btnMovimientosCaja.Click += new System.EventHandler(this.btnMovimientosCaja_Click);
             // 
             // btnCrearCuentas
@@ -273,6 +292,7 @@
             this.btnVerUsuarios.Text = "Ver Usuarios";
             this.btnVerUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerUsuarios.UseVisualStyleBackColor = true;
+            this.btnVerUsuarios.Visible = false;
             this.btnVerUsuarios.Click += new System.EventHandler(this.btnVerUsuarios_Click);
             // 
             // btnMovimientosProducto
@@ -289,6 +309,7 @@
             this.btnMovimientosProducto.Text = "Movimientos de Productos";
             this.btnMovimientosProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMovimientosProducto.UseVisualStyleBackColor = true;
+            this.btnMovimientosProducto.Visible = false;
             this.btnMovimientosProducto.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnMovimientos
@@ -478,6 +499,7 @@
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Visible = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // panelSubProveedores
@@ -773,22 +795,6 @@
             this.btnBuscar.TabIndex = 17;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(0, 273);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(233, 36);
-            this.btnAgregarCategoria.TabIndex = 11;
-            this.btnAgregarCategoria.Text = "Agregar Categoria";
-            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click_1);
             // 
             // FmMenu
             // 

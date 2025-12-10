@@ -54,7 +54,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesVentas)).BeginInit();
             this.SuspendLayout();
@@ -311,7 +311,7 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
+            this.PrecioTotal,
             this.Eliminar});
             this.dgvDetallesVentas.Location = new System.Drawing.Point(69, 245);
             this.dgvDetallesVentas.MultiSelect = false;
@@ -379,13 +379,13 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // Column5
+            // PrecioTotal
             // 
-            this.Column5.FillWeight = 46.25178F;
-            this.Column5.HeaderText = "Precio Total";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.PrecioTotal.FillWeight = 46.25178F;
+            this.PrecioTotal.HeaderText = "Precio Total";
+            this.PrecioTotal.MinimumWidth = 6;
+            this.PrecioTotal.Name = "PrecioTotal";
+            this.PrecioTotal.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -466,7 +466,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }

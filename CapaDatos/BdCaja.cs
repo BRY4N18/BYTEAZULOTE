@@ -235,5 +235,37 @@ namespace CapaDatos
                 return (false, ex.Message);
             }
         }
+        public decimal TotalDetalleVenta(int IdProducto, int Cantidad, decimal PrecioUnitario)
+        {
+            try
+            {
+                using (SqlConnection conn= BdConexion.ObtenerConexion())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_SL_ObtenerTotalDetalleVenta", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@IdProducto", IdProducto);
+                        cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
+                        cmd.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
+
+                        SqlParameter TotalVenta = new SqlParameter("@TotalVenta", SqlDbType.Decimal);
+                        TotalVenta.Precision = 18;
+                        TotalVenta.Scale = 2;
+                        TotalVenta.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(TotalVenta);
+
+                        cmd.ExecuteNonQuery();
+
+                        return (Convert.ToDecimal(TotalVenta.Value));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }

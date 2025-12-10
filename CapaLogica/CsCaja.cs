@@ -85,5 +85,11 @@ namespace CapaLogica
                 return (false, "Error al realizar la devolucion del producto");
             }
         }
+
+        public decimal TotalDetalleVenta(int IdProducto, int Cantidad, decimal PrecioUnitario)
+        {
+            bdCaja = new BdCaja();
+            return bdCaja.TotalDetalleVenta(IdProducto,Cantidad, PrecioUnitario);
+        }
     }
 }

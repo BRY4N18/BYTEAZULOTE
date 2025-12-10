@@ -111,18 +111,34 @@ namespace BYTEAZULPROFESIONAL
                     MessageBox.Show("La cantidad solicitada excede el stock disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    double total = int.Parse(txtCantidad.Text) * double.Parse(txtPrecio.Text);
-                    dgvDetallesVentas.Rows.Add(txtIdProducto.Text.Trim(), txtNombreProducto.Text.Trim(), txtCantidad.Text.Trim(), txtPrecio.Text.Replace(',', '.').Trim(), total.ToString().Replace(',', '.').Trim());
+                    cscaja = new CsCaja();
+                    int idproducto = int.Parse(txtIdProducto.Text.Trim());
+                    int cantidad = int.Parse(txtCantidad.Text.Trim());
+                    decimal precio = decimal.Parse(txtPrecio.Text.ToString().Trim());
+                    decimal total = cscaja.TotalDetalleVenta(idproducto, cantidad, precio);
+                    dgvDetallesVentas.Rows.Add(txtIdProducto.Text.Trim(), txtNombreProducto.Text.Trim(), txtCantidad.Text.Trim(), txtPrecio.Text.Trim(), total.ToString().Trim());
+                    SumarTotalDetallesVentas();
                     txtIdProducto.Clear();
                     txtNombreProducto.Clear();
                     txtPrecio.Clear();
                     txtCantidad.Clear();
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error inesperado: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void SumarTotalDetallesVentas()
+        {
+            decimal total = 0;
+            for (int i = 0; i < dgvDetallesVentas.Rows.Count; i++)
+            {
+                total += decimal.Parse(dgvDetallesVentas.Rows[i].Cells["PrecioTotal"].Value.ToString().Trim());
+            }
+            txtTotal.Text = total.ToString();
         }
 
         private void fmCaja_Load(object sender, EventArgs e)
